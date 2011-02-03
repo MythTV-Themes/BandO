@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+	
+	<!-- ================================================================== -->
+	<!-- The dvd ripping/transcoding screen -->
+	<window name="dvd_rip">
+		
+		<!-- the background image -->		
+    <imagetype name="backgroundlogo">
+      <area>0,0,1600,1050</area>
+      <filename>shared/background-main-logo.png</filename>
+    </imagetype>
+    
+    
+    <clock name="clock" from="baseclock" />
+    <clock name="date" from="basedate" />
+		
+		<!-- The heading (name) of the screen -->
+		<textarea name="heading" from="base_heading">
+			<position>0,0</position>
+			<textarea name="text">
+				<value>DVD import</value>
+			</textarea>
+		</textarea>
+		
+				
+		<!-- Context 1 & 2, Warnings or Status Messages	-->
+
+		<textarea name="warning" from="base_textarea">
+			<multiline>yes</multiline>
+			<area>390,194,500,60</area>
+			<align>allcenter</align>
+		</textarea>
+		
+		<!-- Context 3, Browse active jobs -->
+		<textarea name="overall_text" from="base_textarea">
+			<multiline>yes</multiline>
+			<area>390,150,500,60</area>
+			<align>hcenter,top</align>
+		</textarea>
+		
+		<textarea name="job_text" from="base_textarea">
+			<area>390,258,500,30</area>
+			<align>allcenter</align>
+		</textarea>
+		
+
+		
+		<shape name="progress_separator">
+			<area>390,302,500,1</area>
+			<type>roundbox</type>
+			<line color="#FFFFFF" alpha="80" width="1" />
+			<cornerradius>0</cornerradius>
+		</shape>		
+		
+		<progressbar name="overall_progress" from="base_progressbar">
+			<position>390,320</position>
+		</progressbar>
+		<textarea name="overall_progress_text" from="base_textarea">
+			<area>390,325,540,30</area>
+			<align>allcenter</align>
+			<value>Overall Progress</value>
+		</textarea>
+		
+		<progressbar name="job_progress" from="base_progressbar">
+			<position>390,378</position>
+		</progressbar>
+		<textarea name="job_progress_text" from="base_textarea">
+			<area>390,383,540,30</area>
+			<align>allcenter</align>
+			<value>Job Progress</value>
+		</textarea>
+		
+		<shape name="selection_separator">
+			<area>390,436,500,1</area>
+			<type>roundbox</type>
+			<line color="#FFFFFF" alpha="80" width="1" />
+			<cornerradius>0</cornerradius>
+		</shape>
+
+		<button name="prev">
+			<position>500,460</position>
+			<statetype name="buttonstate">
+				<state name="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_inactive.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<position>6,1</position>
+						<filename>images/shared/arrow_left.png</filename>
+						<alpha>90</alpha>
+					</imagetype>
+				</state>
+				<state name="selected" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_left.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+				<state name="disabled" from="active" />
+				<state name="pushed" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_left.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+			</statetype>
+		</button>
+		
+		<textarea name="numbjobs" from="base_textarea">
+			<area>540,461,200,30</area>
+			<value>Job 1 of 1</value>
+			<align>allcenter</align>
+		</textarea>
+		
+		<button name="next">
+			<position>750,460</position>
+			<statetype name="buttonstate">
+				<state name="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_inactive.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<position>6,1</position>
+						<filename>images/shared/arrow_right.png</filename>
+						<alpha>90</alpha>
+					</imagetype>
+				</state>
+				<state name="selected" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_right.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+				<state name="disabled" from="active" />
+				<state name="pushed" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_right.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+			</statetype>
+		</button>
+				
+		<shape name="button_separator">
+			<area>390,512,500,1</area>
+			<type>roundbox</type>
+			<line color="#FFFFFF" alpha="80" width="1" />
+			<cornerradius>0</cornerradius>
+		</shape>
+		
+		<button name="ripscreen" from="base_button">
+			<position>480,532</position>
+		</button>
+
+		<button name="cancel" from="base_button">
+			<position>650,532</position>
+		</button>	
+	</window>
+	
+	
+	<!-- ================================================================== -->
+	<!-- The screen where the user can set different dvd ripping options -->
+	<window name="title_dialog">
+		
+		<!-- the background image -->		
+    <imagetype name="backgroundlogo">
+      <area>0,0,1600,1050</area>
+      <filename>shared/background-main-logo.png</filename>
+    </imagetype>
+    
+    
+    <clock name="clock" from="baseclock" />
+    <clock name="date" from="basedate" />
+		
+		<!-- The heading (name) of the screen -->
+		<textarea name="heading" from="base_heading">
+			<position>0,0</position>
+			<textarea name="text">
+				<value>DVD import</value>
+			</textarea>
+		</textarea>
+		
+		<!-- The clock that is shown at the top right of each screen -->
+		<textarea name="clock" from="base_clock">
+			<position>1065,0</position>	
+		</textarea>
+		
+		<shape name="dvd_title_background" from="base_background_shape">
+			<area>350,92,580,539</area>
+		</shape>
+			
+		<!-- A bunch of text "labels" -->
+		<textarea name="playtime_text" from="base_textarea">
+			<area>370,110,145,44</area>
+			<value>Length:</value>
+			<align>right,vcenter</align>
+		</textarea>
+		
+		<textarea name="ripcheck_text" from="playtime_text">
+			<position>370,154</position>
+			<value>Select:</value>
+		</textarea>
+		
+		<textarea name="ripname_text" from="playtime_text">
+			<position>370,198</position>
+			<value>Name:</value>
+		</textarea>
+		
+		<textarea name="ripquality_text" from="playtime_text">
+			<position>370,242</position>
+			<value>Quality:</value>
+		</textarea>
+		
+		<textarea name="ripaudio_text" from="playtime_text">
+			<position>370,286</position>
+			<value>Audio Track:</value>
+		</textarea>
+		
+		<textarea name="ripacthree_text" from="playtime_text">
+			<position>370,330</position>
+			<value>AC3 Audio:</value>
+		</textarea>
+		
+		<textarea name="subtitle_text" from="playtime_text">
+			<position>370,374</position>
+			<value>Subtitles:</value>
+		</textarea>
+		
+		<textarea name="ripview_text" from="playtime_text">
+			<position>370,418</position>
+			<value>View:</value>
+		</textarea>
+		
+		<!-- Widgets that actually do things -->
+		<textarea name="playlength" from="base_textarea">
+			<area>525,110,300,44</area>
+			<value>0:00:00</value>
+			<align>left,vcenter</align>
+		</textarea>
+		
+		<checkbox name="ripcheck" from="base_checkbox">
+			<position>525,159</position>
+		</checkbox>
+		
+		<textedit name="name" from="base_textedit">
+			<position>525,198</position>
+		</textedit>
+		
+		<buttonlist name="quality" from="base_selector">
+			<position>525,242</position>
+		</buttonlist>
+		
+		<buttonlist name="audio" from="base_selector">
+			<position>525,286</position>
+		</buttonlist>
+		
+		<checkbox name="ripacthree" from="base_checkbox">
+			<position>525,335</position>
+		</checkbox>
+		
+		<buttonlist name="subtitle" from="base_selector">
+			<position>525,374</position>
+		</buttonlist>
+		
+		<button name="view" from="base_searchbutton">
+			<position>525,423</position>
+		</button>
+		
+		<shape name="settings_separator">
+			<area>370,476,540,1</area>
+			<type>roundbox</type>
+			<line color="#FFFFFF" alpha="80" width="1" />
+			<cornerradius>0</cornerradius>
+		</shape>
+		
+		<button name="prev_title">
+			<position>360,501</position>
+			<statetype name="buttonstate">
+				<state name="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_inactive.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<position>6,1</position>
+						<filename>images/shared/arrow_left.png</filename>
+						<alpha>90</alpha>
+					</imagetype>
+				</state>
+				<state name="selected" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_left.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+				<state name="disabled" from="active" />
+				<state name="pushed" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_left.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+			</statetype>
+		</button>
+		
+		<textarea name="numb_titles" from="base_textarea">
+			<area>520,501,250,30</area>
+			<value>Title 1 of 1</value>
+			<align>allcenter</align>
+		</textarea>
+		
+		<button name="next_title" from="base_button">
+			<position>780,501</position>
+			<statetype name="buttonstate">
+				<state name="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_inactive.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<position>6,1</position>
+						<filename>images/shared/arrow_right.png</filename>
+						<alpha>90</alpha>
+					</imagetype>
+				</state>
+				<state name="selected" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_right.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+				<state name="disabled" from="active" />
+				<state name="pushed" from="active">
+					<imagetype name="background">
+						<filename>images/widgets/checkbox_active.png</filename>
+					</imagetype>
+					<imagetype name="arrow">
+						<filename>images/shared/arrow_right.png</filename>
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+			</statetype>
+		</button>
+		
+		<shape name="button_separator">
+			<area>370,552,540,1</area>
+			<type>roundbox</type>
+			<line color="#FFFFFF" alpha="80" width="1" />
+			<cornerradius>0</cornerradius>
+		</shape>
+
+		<button name="ripaway" from="base_button_wide">
+			<position>490,572</position>
+		</button>
+		
+	</window>
+	
+</mythuitheme>
+ 

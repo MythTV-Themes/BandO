@@ -1,0 +1,58 @@
+<mythuitheme>
+    <window name="mainmenu">
+        <fontdef name="menuselectfont" from="basetitle">
+            <size>40</size>
+        </fontdef>
+        
+        <fontdef name="menufont" from="basesmall">
+            <color>#666666</color>
+        </fontdef>
+
+        <imagetype name="backgroundlogo" from="basebackgroundlogo"/>
+        <imagetype name="logo" from="baselogo" />
+        
+        <imagetype name="divider">
+            <area>750,46,126,959</area>
+            <filename>shared/menudivider.png</filename>
+        </imagetype>
+        
+        <buttonlist name="menu">
+            <area>0,0,1680,1050</area>
+            <layout>vertical</layout>
+            <spacing>15</spacing>
+            <scrollstyle>free</scrollstyle>
+            <wrapstyle>selection</wrapstyle>
+            <buttonarea>50,70,1000,900</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,600,60</area>
+                    <textarea name="buttontext">
+                        <area>0,0,600,60</area>
+                        <font>menufont</font>
+                        <align>right,vcenter</align>
+                        <cutdown>yes</cutdown>
+                        <case>upper</case>
+                    </textarea>
+                </state>
+                <state name="selectedactive"> 
+                    <area>0,0,600,60</area>
+                    <imagetype name="buttonbackground">
+                        <filename>shared/menuselectbar.png</filename>
+                        <position>300,0</position>
+                        <alphapulse min="100" max="255" change="1"/>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>50,0,600,60</area>
+                        <font>menuselectfont</font>
+                        <align>right,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <clock name="clock" from="baseclock" />
+        <clock name="date" from="basedate" />
+        
+    </window>
+</mythuitheme>

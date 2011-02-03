@@ -1,0 +1,356 @@
+<mythuitheme>
+    <window name="program_info">
+        <imagetype name="background">
+            <filename>osd/osd_mid.png</filename>
+            <position>0,850</position>
+        </imagetype>
+        <textarea name="title">
+            <area>200,860,800,40</area>
+            <font>basetitle</font>
+        </textarea>
+        <textarea name="description">
+            <multiline>yes</multiline>
+            <area>200,905,1400,90</area>
+            <font>basesmallgrey</font>
+	    <value>%SUBTITLE| %%DESCRIPTION%</value>
+        </textarea>
+        <textarea name="starttime">
+            <area>200,1000,500,25</area>
+            <font>basesmallgrey</font>
+            <value>%STARTTIME% - %ENDTIME% - %LENMINS%</value>
+        </textarea>
+        <imagetype name="iconpath">
+            <area>5,860,180,180</area>
+	    <preserveaspect>yes</preserveaspect>
+        </imagetype>
+        <textarea name="time">
+            <area>1500,860,170,40</area>
+            <font>basesmallgrey</font>
+            <align>right</align>
+        </textarea>
+        <textarea name="channum" from="time">
+            <area>1500,905,170,40</area>
+            <value>%CHANNUM%</value>
+        </textarea>
+	<!--  Clock and Date on the right	  -->
+	<clock name="clock" from="baseclock" />
+	<clock name="date" from="basedate" />
+    </window>
+    
+    <window name="channel_number">
+        <textarea name="channum" align="center">
+            <area>5,340,100,50</area>
+            <font>channelfont</font>
+            <value>%CHANNUM%</value>
+        </textarea>
+        <textarea name="callsign" align="center">
+            <multiline>no</multiline>
+            <area>20,395,100,50</area>
+            <font>callsignfont</font>
+            <value>%CALLSIGN%</value>
+        </textarea>
+    </window>
+    
+    <window name="browse_info">
+        <imagetype name="background">
+            <filename>osd/osd_mid.png</filename>
+            <position>0,850</position>
+        </imagetype>
+        <textarea name="title">
+            <area>100,860,400,30</area>
+            <font>basetitle</font>
+        </textarea>
+        <textarea name="description">
+            <multiline>yes</multiline>
+            <area>100,905,500,90</area>
+            <font>infofont</font>
+            <value>%SUBTITLE|"|" %%DESCRIPTION%</value>
+        </textarea>
+        <textarea name="starttime">
+            <area>100,1000,500,25</area>
+            <font>grayfont</font>
+            <value>(%STARTTIME% - %ENDTIME%)  %LENMINS%</value>
+        </textarea>
+        <imagetype name="channelicon">
+            <area>5,860,90,90</area>
+        </imagetype>
+        <textarea name="time" align="right">
+            <area>1500,860,170,40</area>
+            <font>timefont</font>
+        </textarea>
+        <textarea name="channum" align="right">
+            <area>1400,905,180,40</area>
+            <font>callsignfont</font>
+            <value>%CHANNUM%</value>
+        </textarea>
+        <textarea name="callsign" align="center">
+            <multiline>no</multiline>
+            <area>1500,895,60,30</area>
+            <font>callsignfont</font>
+            <value>%CALLSIGN%</value>
+        </textarea>
+    </window>
+    
+    <window name="osd_status">
+        <progressbar name="position" from="baseprogressbar">
+            <position>150,1000</position>
+        </progressbar>
+        <textarea name="description">
+            <area>150,1000,1380,30</area>
+            <font>basesmalldarkgrey</font>
+            <align>allcenter</align>
+            <template>%DESCRIPTION% %VALUE%%UNITS%</template>
+        </textarea>
+    </window>
+    
+    <window name="osd_message">
+        <area>0,0,1680,1050</area>
+        <imagetype name="background">
+            <filename>osd/osd_top.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        <textarea name="message_text">
+            <area>10,0,400,100</area>
+            <font>basetitle</font>
+            <align>vcenter</align>
+        </textarea>
+    </window>
+    
+    <window name="osd_input">
+        <area>0,0,1680,1050</area>
+        <imagetype name="background">
+            <filename>osd/osd_top.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        <textarea name="osd_number_entry">
+            <area>10,0,400,100</area>
+            <font>basetitle</font>
+            <align>vcenter</align>
+        </textarea>
+    </window>
+    
+    <window name="notify_alert_text">
+        <area>0,0,1680,1050</area>
+        <imagetype name="background">
+            <filename>osd/osd_top.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        <textarea name="osd_number_entry">
+            <area>10,0,400,100</area>
+            <font>basetitle</font>
+            <align>vcenter</align>
+        </textarea>
+    </window>
+    
+    <window name="editmode">
+        <imagetype name="background">
+            <filename>osd/osd_top.png</filename>
+            <position>0,0</position>
+        </imagetype>
+        <textarea name="edit">
+            <area>20,65,100,27</area>
+            <font>basetitle</font>
+            <value>Edit</value>
+        </textarea>
+        <slider name="editslider" type="edit">
+            <area>0,0,1680,20</area>
+            <filename>osd/fill_green.png</filename>
+            <altfilename>fill_red.png</altfilename>
+        </slider>
+        <slider name="editposition" type="position">
+            <area>0,0,1680,32</area>
+            <filename>osd/edit-cut.png</filename>
+        </slider>
+        <editarrow name="left">
+            <filename>osd/cut_end.png</filename>
+            <area>0,0,1680,10</area>
+        </editarrow>
+        <editarrow name="right">
+            <filename>osd/cut_start.png</filename>
+            <area>0,0,1680,10</area>
+        </editarrow>
+        <textarea name="timedisplay" align="center">
+            <area>500,65,600,35</area>
+            <font>smallfont</font>
+        </textarea>
+        <textarea name="cutindicator">
+            <area>0,0,1680,10</area>
+            <font>settings</font>
+        </textarea>
+        <textarea name="seekamount" align="right">
+            <area>1400,65,200,35</area>
+            <font>timefont</font>
+        </textarea>
+    </window>
+    
+    <window name="settings">
+        <imagetype name="background">
+            <filename>osd/osd_top.png</filename>
+            <position>0,950</position>
+        </imagetype>
+        <textarea name="settings">
+            <area>20,985,1000,100</area>
+            <font>settings</font>
+        </textarea>
+    </window>
+    
+    <window name="basedialog">
+        <!-- must be named this --> 
+        <imagetype name="background"> 
+            <filename>osd/popup.png</filename> 
+            <position>0,0</position> 
+        </imagetype>
+
+	<positionimage name="selector"> 
+            <filename>osd/buttonbackground-selected.png</filename> 
+            <position>5,340</position> 
+            <position>5,390</position> 
+            <position>5,440</position> 
+            <position>5,490</position> 
+        </positionimage>
+         
+        <textarea name="message"> 
+            <area>15,25,590,200</area> 
+            <font>basetitle</font> 
+            <multiline>yes</multiline> 
+        </textarea>
+         
+        <textarea name="option1"> 
+            <area>25,350,590,200</area> 
+            <font>notify</font> 
+            <altfont>grayfont</altfont> 
+        </textarea>
+         
+        <textarea name="option2"> 
+            <area>25,400,590,200</area> 
+            <font>notify</font> 
+            <altfont>grayfont</altfont> 
+        </textarea>
+         
+        <textarea name="option3"> 
+            <area>25,450,590,200</area> 
+            <font>notify</font> 
+            <altfont>grayfont</altfont> 
+        </textarea>
+         
+        <textarea name="option4"> 
+            <area>25,500,590,200</area> 
+            <font>notify</font> 
+            <altfont>grayfont</altfont> 
+        </textarea>
+         
+    </window>
+     
+    <window name="menu">
+        <listtreemenu name="menu">
+            <area>20,20,600,1010</area>
+            <listsize>0,0,600,1010</listsize>
+            <leveloffset>10</leveloffset>
+            <gradient type="unselected" start="#000000" end="#000000" alpha="150">
+            </gradient>
+            <gradient type="selected" start="#800000" end="#800000" alpha="255">
+            </gradient>
+            <fcnfont name="infofont" function="active">
+            </fcnfont>
+            <fcnfont name="infofontgray" function="inactive">
+            </fcnfont>
+        </listtreemenu>
+    </window>
+    
+    <window name="channel_editor">
+
+	<area>0,0,1680,1050</area>
+	<imagetype name="statusbar" from="basestatusbar" />
+	<clock name="clock" from="baseclock" />
+	<textarea name="title" from="basepagetitle" />
+	<imagetype name="1640x58">
+	    <position>20,890</position>
+	    <filename>OSD/fillbar-empty.png</filename>
+	</imagetype>
+	<textarea name="framedisplay" from="basebigstatetext">
+	    <area>30,890,450,58</area>
+	    <align>vcenter, left</align>
+	    <template>Frame %1</template>
+	</textarea>
+	<textarea name="timedisplay" from="basebigstatetext">
+	    <font>basebuttontitle</font>
+	    <area>0,890,1640,58</area>
+	    <align>allcenter</align>
+	</textarea>
+	<textarea name="seekamount" from="basebigstatetext">
+	    <area>1200,890,440,58</area>
+	</textarea>
+	<editbar name="editbar">
+	    <area>20,970,1640,58</area>
+	    <imagetype name="cut">
+		<position>0,0</position>
+		<filename>OSD/fillbar-empty.png</filename>
+	    </imagetype>
+	    <imagetype name="keep">
+		<position>0,0</position>
+		<filename>OSD/fillbar-full.png</filename>
+	    </imagetype>
+	    <shape name="cuttoright">
+		<area>0,0,4,100%</area>
+		<fill color="#0000FF" alpha="255" />
+	    </shape>
+	    <shape name="cuttoleft">
+		<area>0,0,4,100%</area>
+		<fill color="#0000FF" alpha="255" />
+	    </shape>
+	    <shape name="keeptoright">
+		<area>0,0,4,100%</area>
+		<fill color="#0099FF" alpha="255" />
+	    </shape>
+	    <shape name="keeptoleft">
+		<area>0,0,4,100%</area>
+		<fill color="#0099FF" alpha="255" />
+	    </shape>
+	    <shape name="position">
+		<area>0,0,4,100%</area>
+		<fill color="#FFFFFF" alpha="255" />
+	    </shape>
+	</editbar>
+    </window>
+    
+    <!-- Popup menu -->
+    <window name="MythPopupBox">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        <textarea name="messagearea" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,200</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        <buttonlist name="list" from="basebuttonlist">
+            <area>5,205,590,580</area>
+            <drawfrombottom>yes</drawfrombottom>
+            <align>center</align>
+            <showarrow>no</showarrow>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <imagetype name="buttonbackground">
+                        <filename>shared/buttonbackground-selected.png</filename>
+                        <position>0,0</position>
+                        <alpha>0</alpha>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>0,0,100%,50</area>
+                        <align>allcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground">
+                        <alpha>250</alpha>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <font>menuselectfont</font>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+</mythuitheme>

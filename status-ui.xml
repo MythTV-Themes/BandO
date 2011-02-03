@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+    
+    <window name="status">
+      
+		<!-- ================================================================== -->
+		<!-- The heading (name) of the screen -->
+		<textarea name="heading" from="base_heading">
+			<position>0,0</position>
+			<textarea name="text">
+				<value>System Status</value>
+			</textarea>
+		</textarea>
+		
+		<!-- ================================================================== -->
+		<!-- The clock that is shown at the top right of each screen -->
+		<textarea name="clock" from="base_clock">
+			<position>1065,0</position>	
+		</textarea>
+        
+		<!-- This is the background in which the status is displayed -->
+		<shape name="status_background" from="base_background_shape">
+			<area>25,140,1230,460</area>
+        </shape>
+ 
+        <!-- ================================================================== -->
+		<!-- shows some information text about the current selection -->
+		<textarea name="helptext" from="base_textarea">
+			<area>45,146,1190,60</area>
+			<value>This screen displays the status of various system components</value>
+			<multiline>yes</multiline>
+			<align>left,vcenter</align>
+		</textarea>
+
+		<shape name="helptext_separator">
+			<area>45,210,1190,1</area>
+			<type>roundbox</type>
+			<line color="#FFFFFF" alpha="80" width="1" />
+			<cornerradius>0</cornerradius>
+		</shape>	
+
+        <!-- This is the internal buttonlist that is shown on the left -->
+        <buttonlist name="category" from="base_buttonlist">
+			<area>44,230,300,354</area>
+			<statetype name="buttonitem">
+	        	<state name="active">
+					<imagetype name="buttonbackground">
+						<alpha>255</alpha>
+					</imagetype>
+				</state>
+			</statetype>
+        </buttonlist>
+        		
+        <!-- This is the internal buttonlist that is 
+        shown within the roundbox that is defined above -->
+		<buttonlist name="log" from="base_buttonlist_very_wide">
+			<area>410,230,790,354</area>
+			<wrapstyle>selection</wrapstyle>
+			<statetype name="buttonitem">
+				<area>0,0,790,40</area>				
+				<!-- general settings for the menu entry -->
+				<state name="active">
+					<textarea name="buttontext">
+						<area>8,5,95%,30</area>
+						<font>text</font>
+						<font state="disabled">text_inactive</font>
+						<font state="error">text_error</font>
+						<font state="warning">text_warning</font>
+						<font state="normal">text</font>
+						<font state="running">text</font> 
+						<cutdown>yes</cutdown>
+						<align>left,vcenter</align>
+					</textarea>
+				</state>
+			</statetype>		
+		</buttonlist> 
+       
+ 
+    </window>
+
+
+</mythuitheme>

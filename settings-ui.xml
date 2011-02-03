@@ -1,0 +1,181 @@
+<mythuitheme>
+    <window name="rawsettingseditor">
+	<textarea name="heading" from="basetextarea">
+	    <area>20,20,1240,40</area>
+	    <align>allcenter</align>
+	    <font>baselarge</font>
+	</textarea>
+	
+	<buttonlist name="settings" from="basebuttonlist">
+	    <area>20,80,400,400</area>
+	    <layout>vertical</layout>
+	    <spacing>5</spacing>
+	    <scrollstyle>free</scrollstyle>
+	    <wrapstyle>none</wrapstyle>
+	    <buttonarea>0,0,400,380</buttonarea>
+	</buttonlist>
+	
+	<shape name="label-shape">
+	    <area>20,500,400,30</area>
+	    <type>roundbox</type>
+	    <fill color="#000000" alpha="130" />
+	    <cornerradius>4</cornerradius>
+	</shape>
+	
+	<textarea name="label-text">
+	    <area>24,500,392,30</area>
+	    <font>basesmallgreen</font>
+	    <align>left,vcenter</align>
+	</textarea>
+	
+	<shape name="background">
+	    <area>428,500,830,30</area>
+	    <type>roundbox</type>
+	    <fill color="#FFFFFF" />
+	    <cornerradius>4</cornerradius>
+	</shape>
+	
+	<textedit name="settingvalue">
+	    <area>428,500,830,30</area>
+	    <imagetype name="cursor">
+		<filename>cursor.png</filename>
+	    </imagetype>
+	    <textarea name="text">
+		<area>5,0,820,30</area>
+		<font>basesmallblack</font>
+	    </textarea>
+	</textedit>
+	
+	<button name="cancel" from="basebutton">
+	    <position>20,660</position>
+	    <value>Cancel</value>
+	</button>
+	
+	<button name="save" from="basebutton">
+	    <position>1110,660</position>
+	    <value>Save</value>
+	</button>
+	
+    </window>
+    
+    <window name="themechooser">
+	<area>0,0,1680,1050</area>
+	
+	<!--  we use one large background image to draw all widgets on top	  -->
+	<imagetype name="backgroundlogo" from="basebackgroundlogo" />
+	
+	<!--  Clock and Date on the right	  -->
+	<clock name="clock" from="baseclock" />
+	<clock name="date" from="basedate" />
+	
+	<textarea name="title" from="basepagetitle">
+	    <value>Choose a Theme</value>
+	</textarea>
+	
+	<buttonlist name="themes" from="basegroups">
+	    <statetype name="buttonitem">
+		<state name="active">
+		    <textarea name="buttontext">
+			<template>%NAME% - %ASPECT% (%RESOLUTION%)</template>
+		    </textarea>
+		</state>
+		<state name="selectedactive">
+		    <area>0,0,490,140</area>
+		    
+		    <textarea name="buttontext">
+			<font>basebuttontitle</font>
+			<align>top</align>
+			<area>5,0,480,40</area>
+			<cutdown>yes</cutdown>
+		    </textarea>
+		</state>
+	    </statetype>
+	</buttonlist>
+	
+	
+	<!--   Aspect ratio and Resolution of the theme	  -->	
+	<textarea name="aspect" from="basetextarea">
+	    <area>772,46,620,42</area>
+	    <font>basetitle</font>
+	    <cutdown>yes</cutdown>
+	    <template>%ASPECT% (%RESOLUTION%)</template>
+	</textarea>
+	
+	<!--  The description field, that in this case fuses subtitle + rating + description into one -->
+	
+	<textarea name="description" from="basetextarea">
+	    <area>350,770,1035,210</area>
+	    <multiline>yes</multiline>
+	    <cutdown>yes</cutdown>
+	    <template>%DESCRIPTION% (%ERRATA%)</template>
+	</textarea>
+	
+	<!--  The preview of the theme cut to size so it fits into the cover screen -->
+	<imagetype name="preview">
+	    <area>430,136,965,580</area>
+	    <preserveaspect>true</preserveaspect>
+	    <filename />
+	</imagetype>
+	
+	<progressbar name="downloadprogressbar" from="baseprogressbar">
+	    <area>45,955,1350,30</area>
+	</progressbar>
+	
+	<textarea name="authorname" from="basetextarea">
+	    <area>50,890,890,30</area>
+	</textarea>
+	<textarea name="authoremail" from="basetextarea">
+	    <area>50,920,890,30</area>
+	</textarea>
+	
+	<!-- is there an upate available for the theme? -->
+	<statetype name="themestatus">
+	    <state name="uptodate">
+		<textarea name="update" from="basetextarea">
+		    <area>50,830,287,30</area>
+		    <value>Uptodate</value>
+		</textarea>
+	    </state>
+	    <state name="updateavailable">
+		<textarea name="update"  from="basetextarea">
+		    <area>50,830,287,30</area>
+		    <value>Update available</value>
+		</textarea>
+	    </state>
+	</statetype>
+	
+	
+	<!--  is the theme installed localy or can it be downloaded	  -->
+	<statetype name="themelocation">
+	    <state name="local">
+		<textarea name="location" from="basetextarea">
+		    <value>Local</value>
+		    <area>50,860,287,30</area>	
+		</textarea>
+	    </state>
+	    <state name="remote">
+		<textarea name="location" from="basetextarea">
+		    <value>Remote</value>
+		    <area>50,860,287,30</area>	
+		</textarea>
+	    </state>
+	</statetype>
+
+	<!--  fullscreen preview on demand -->        
+	<statetype name="fullpreviewstate">
+	    <area>0,0,1680,1050</area>
+	    <state name="fullscreen">
+		<area>0,0,1680,1050</area>
+		<!--  screenshot of theme	-->  
+		<imagetype name="fullscreenpreview">
+		    <area>0,0,1680,1050</area>
+		    <filename />
+		    <preserveaspect>true</preserveaspect>
+		</imagetype>
+		<!--  Title on top of the page	  
+		    <textarea name="fullscreenname" from="basepagetitle" />-->
+		</state>
+	    </statetype>
+	</window>
+</mythuitheme>
+    

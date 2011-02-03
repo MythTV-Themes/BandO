@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+
+    <window name="keygrabpopup">
+   	<area>-1,-1,600,800</area>
+	<imagetype name="backimg">
+	    <filename>shared/MythPopupBox-background.png</filename>
+	</imagetype>
+        <textarea name="message" from="basetextarea">
+	    <font>basetitle</font>
+	    <area>5,5,590,200</area>
+	    <multiline>yes</multiline>
+	    <align>allcenter</align>
+        </textarea>
+        
+	<imagetype name="keyboard">
+	    <position>50,180</position>
+	    <filename>icons/input-keyboard.png</filename>
+	    <alpha>100</alpha>
+	</imagetype>        
+
+        <button name="cancel" from="basepopupbuttoncancel">
+            <position>5,650</position>
+            <value>Cancel</value>
+        </button>
+        
+	<button name="ok" from="basepopupbuttonok">
+	    <position>5,705</position>
+	    <value>OK</value>
+	</button>
+    </window>
+
+    <window name="controls">
+<!--  we use one large background image to draw all widgets on top	  -->
+    <imagetype name="backgroundlogo" from="basebackgroundlogo" />
+
+<!--  Clock and Date on the right	  -->
+    <clock name="clock" from="baseclock" />
+    <clock name="date" from="basedate" />
+
+        <textarea name="leftdesc" from="basetextarea">
+            <area>50,50,380,40</area>
+            <value>Contexts</value>
+	    <font>basetitle</font>
+        </textarea>
+
+        <buttonlist name="leftlist" from="basegroups">
+        </buttonlist>
+
+        <textarea name="rightdesc" from="leftdesc">
+            <area>440,50,380,40</area>
+            <value>Actions</value>
+        </textarea>
+
+        <buttonlist name="rightlist" from="basebuttonlist2">
+    <area>430,136,600,580</area>
+        </buttonlist>
+<!--  line dividing the screen	  -->
+    <imagetype name="divider">
+	<area>418,136,3,580</area>
+	<filename>playback/divider.png</filename>
+    </imagetype>
+
+
+        <textarea name="description" from="basetextarea">
+            <area>50,750,1350,60</area>
+            <multiline>yes</multiline>
+        </textarea>
+
+
+        <button name="action_0" from="basepopupbutton">
+            <position>50,830</position>
+        </button>
+
+        <button name="action_1" from="action_0">
+            <position>795,830</position>
+        </button>
+
+        <button name="action_2" from="action_0">
+            <position>50,930</position>
+        </button>
+
+        <button name="action_3" from="action_0">
+            <position>795,930</position>
+        </button>
+
+    </window>
+</mythuitheme>

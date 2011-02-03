@@ -1,0 +1,1435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+    <!-- Base Font Definitions -->
+    <fontdef name="basesmall" face="DejaVu Sans">
+        <pixelsize>25</pixelsize>
+        <color>#FFFFFF</color>
+    </fontdef>
+    
+    <fontdef name="basesmallselected" face="DejaVu Sans Condensed" from="basesmall">
+        <weight>bold</weight>
+    </fontdef>
+    
+    <fontdef name="menuselectfont" from="basesmall">
+        <pixelsize>31</pixelsize>
+        <weight>bold</weight>
+    </fontdef>
+    
+    <fontdef name="menufont" from="basesmall">
+        <color>#666666</color>
+    </fontdef>
+    
+    <fontdef name="basesmaller" from="basesmall">
+        <pixelsize>24</pixelsize>
+    </fontdef>
+    
+    <fontdef name="baseextrasmall" from="basesmall">
+        <pixelsize>22</pixelsize>
+    </fontdef>
+    
+    <fontdef name="baseextrasmallest" from="basesmall">
+        <pixelsize>18</pixelsize>
+    </fontdef>
+    
+    <fontdef name="basemedium" from="basesmall">
+        <pixelsize>28</pixelsize>
+    </fontdef>
+    
+    <fontdef name="baselarge" from="basesmall">
+        <pixelsize>29</pixelsize>
+        <weight>normal</weight>
+    </fontdef>
+    
+    <fontdef name="basetitle" face="Marketing Script">
+        <pixelsize>38</pixelsize>
+    </fontdef>
+     
+    
+    <fontdef name="baseextralarge" from="basesmall">
+        <pixelsize>32</pixelsize>
+    </fontdef>
+    
+    <fontdef name="basesuperlarge" from="basesmall">
+        <pixelsize>54</pixelsize>
+    </fontdef>
+    
+    <!-- Colour variations on base fonts -->
+    <fontdef name="basesmallgrey" from="basesmall">
+        <color>#999999</color>
+    </fontdef>
+    
+    <fontdef name="basesmallergrey" from="basesmallgrey">
+        <pixelsize>16</pixelsize>
+    </fontdef>
+    
+    <fontdef name="basesmallerdarkgrey" from="basesmallergrey">
+        <color>#333333</color>
+    </fontdef>
+    
+    <fontdef name="basesmalldarkgrey" from="basesmallgrey">
+        <color>#333333</color>
+    </fontdef>
+    
+    <fontdef name="basesmallpurple" from="basesmall">
+        <color>#9999cc</color>
+    </fontdef>
+    
+    <fontdef name="basesmallblack" from="basesmall">
+        <color>#000000</color>
+    </fontdef>
+    
+    <fontdef name="basesmallyellow" from="basesmall">
+        <color>#FFFF33</color>
+    </fontdef>
+    
+    <fontdef name="basesmallgreen" from="basesmall">
+        <color>#80d400</color>
+    </fontdef>
+    
+    <fontdef name="basesmallblue" from="basesmall">
+        <color>#0492A7</color>
+    </fontdef>
+    
+    <fontdef name="basesmallerblue" from="basesmaller">
+        <pixelsize>14</pixelsize>
+        <color>#0492A7</color>
+    </fontdef>
+    
+    <fontdef name="basesmallred" from="basesmall">
+        <color>#800900</color>
+    </fontdef>
+    
+    <fontdef name="basemediumgrey" from="basemedium">
+        <color>#666666</color>
+    </fontdef>
+    
+    <fontdef name="basemediumgreen" from="basemedium">
+        <color>#80d400</color>
+    </fontdef>
+    
+    <fontdef name="basemediumred" from="basemedium">
+        <color>#800900</color>
+    </fontdef>
+    
+    <fontdef name="basemediumpurple" from="basemedium">
+        <color>#9999cc</color>
+    </fontdef>
+    
+    <fontdef name="basemediumorange" from="basemedium">
+        <color>#FF6600</color>
+    </fontdef>
+    
+    <fontdef name="baseclock" from="basetitle">
+        <size>70</size>
+    </fontdef>
+    
+    <fontdef name="basedate" from="basesmall">
+        <size>20</size>
+    </fontdef>
+
+    <fontdef name="timedate" face="DejaVu Sans Condensed">
+        <color>#FFFFFF</color>
+        <pixelsize>25</pixelsize>
+        <weight>normal</weight>
+    </fontdef>
+    
+    <fontdef name="timedategray" face="DejaVu Sans Condensed">
+        <color>#999999</color>
+        <pixelsize>25</pixelsize>
+        <weight>normal</weight>
+    </fontdef>
+
+    <clock name="baseclock">
+        <area>1400,48,280,85</area>
+        <font>baseclock</font>
+        <template>%TIME%</template>
+        <align>center</align>
+        <alpha>255</alpha>
+    </clock>
+    <clock name="basedate">
+        <area>1400,130,280,30</area>
+        <font>basedate</font>
+        <template>%DATE%</template>
+        <align>center</align>
+        <alpha>255</alpha>
+    </clock>
+    
+    <imagetype name="baselogo">
+        <area>1410,990,251,56</area>
+        <filename>shared/logo.png</filename>
+    </imagetype>
+    
+    <imagetype name="basebackgroundlogo">
+        <area>0,0,1680,1050</area>
+        <filename>shared/background-main-logo.png</filename>
+    </imagetype>
+    
+    <textarea name="basepagetitle">
+        <area>50,1,1000,45</area>
+        <font>basetitle</font>
+    </textarea>
+    
+    <imagetype name="basecoverart">
+        <area>1400,180,280,416</area>
+        <reflection axis="vertical" shear="0" scale="95" length="100" />
+    </imagetype>
+    
+    <!-- Base definition of a the arrows to upscroll and downscroll   -->    
+    <statetype name="baseupscrollarrow">
+        <position>10,98%</position>
+        <state type="off">
+            <imagetype name="up">
+                <filename>icons/draw-triangle3.png</filename>
+                <alpha>30</alpha>
+            </imagetype>
+        </state>
+        <state type="full" from="off">
+            <imagetype name="up">
+                <alpha>250</alpha>
+            </imagetype>
+        </state>
+    </statetype>
+    
+    <statetype name="basedownscrollarrow">
+        <position>40,98%</position>
+        <state type="off">
+            <imagetype name="down">
+                <filename>icons/draw-triangle4.png</filename>
+                <alpha>30</alpha>
+            </imagetype>
+        </state>
+        <state type="full" from="off">
+            <imagetype name="down">
+                <filename>icons/draw-triangle4.png</filename>
+                <alpha>250</alpha>
+            </imagetype>
+        </state>
+    </statetype>
+    
+    <statetype name="baseleftscrollarrow">
+        <position>-22,8</position>
+        <state type="off">
+            <imagetype name="up">
+                <filename>icons/draw-triangle1.png</filename>
+                <alpha>30</alpha>
+            </imagetype>
+        </state>
+        <state type="full">
+            <imagetype name="up">
+                <filename>icons/draw-triangle1.png</filename>
+                <alpha>250</alpha>
+            </imagetype>
+        </state>
+    </statetype>
+    
+    <statetype name="baserightscrollarrow">
+        <position>100%,8</position>
+        <state type="off">
+            <imagetype name="down">
+                <filename>icons/draw-triangle2.png</filename>
+                <alpha>30</alpha>
+            </imagetype>
+        </state>
+        <state type="full">
+            <imagetype name="down">
+                <filename>icons/draw-triangle2.png</filename>
+                <alpha>250</alpha>
+            </imagetype>
+        </state>
+    </statetype>
+    
+    <!-- Base definition of a buttonlist in normal configuration   -->
+    <buttonlist name="basebuttonlist">
+        <area>0,0,450,600</area>
+        <layout>vertical</layout>
+        <spacing>4</spacing>
+        <buttonarea>0,0,440,100%</buttonarea>
+        <statetype name="buttonitem">
+            <state name="active">
+                <area>0,0,100%,30</area>
+                <imagetype name="buttonbackground">
+                    <position>-5,0</position>
+                    <filename>playback/selector-380x30.png</filename>
+                    <alpha>0</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,100%,30</area>
+                    <font>basesmallgrey</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+                <statetype name="buttoncheck">
+                    <position>91%,10</position>
+                    <state type="off">
+                        <imagetype name="checkoff">
+                            <filename>icons/lb-check-empty.png</filename>
+                        </imagetype>
+                    </state>
+                    <state type="half">
+                        <imagetype name="checkhalf">
+                            <filename>icons/lb-check-half.png</filename>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="checkfull">
+                            <filename>icons/lb-check-full.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="buttonbackground">
+                    <filename>playback/selector-380x30.png</filename>
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <font>basesmallselected</font>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <font>basesmallgrey</font>
+                </textarea>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseupscrollarrow" />
+        <statetype name="downscrollarrow" from="basedownscrollarrow" />
+    </buttonlist>
+    
+    <!-- Base definition of a wider buttonlist -->
+    <buttonlist name="basebuttonlist2">
+        <area>450,50,1361,580</area>
+        <layout>vertical</layout>
+        <spacing>4</spacing>
+        <buttonarea>0,0,100%,100%</buttonarea>
+        <statetype name="buttonitem">
+            <area>50,50,1361,580</area>
+            <state name="active">
+                <imagetype name="selector">
+                    <position>0,0</position>
+                    <filename>playback/selector-965x30.png</filename>
+                    <alpha>0</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,1238,26</area>
+                    <font>basesmallgrey</font>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <font>basesmallselected</font>
+                </textarea>
+            </state>
+            <state name="pushed" from="active">
+                <imagetype name="selector">
+                    <alpha>200</alpha>
+                </imagetype>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseupscrollarrow" />
+        <statetype name="downscrollarrow" from="basedownscrollarrow" />
+    </buttonlist>
+    
+    <buttonlist name="basebuttonlist3" from="basebuttonlist2">
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="selector">
+                    <filename>playback/selector2-965x30.png</filename>
+                    <position>-4,0</position>
+                </imagetype>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                    <alphapulse min="100" max="255" change="1"/>
+                </imagetype>
+                <textarea name="buttontext">
+                    <font>basesmallselected</font>
+                </textarea>
+            </state>
+            <state name="pushed" from="active">
+                <imagetype name="selector">
+                    <alpha>200</alpha>
+                </imagetype>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                    
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseupscrollarrow" />
+        <statetype name="downscrollarrow" from="basedownscrollarrow" />
+    </buttonlist>
+    
+    <!-- Base definition of a buttonlist only for the groups in recordings, should someday be removed for a standard one -->
+    <buttonlist name="basegroups">
+        <area>52,136,380,580</area>
+        <buttonarea>0,0,100%,100%</buttonarea>
+        <spacing>4</spacing>
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="selector">
+                    <position>-5,0</position>
+                    <filename>playback/selector-380x30.png</filename>
+                    <alpha>0</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,340,30</area>
+                    <font>basesmallgrey</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <font>basesmallselected</font>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                    
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseupscrollarrow" />
+        <statetype name="downscrollarrow" from="basedownscrollarrow" />
+    </buttonlist>
+    
+    <buttonlist name="basealphabet">
+        <area>52,136,50,580</area>
+        <buttonarea>0,0,100%,100%</buttonarea>
+        <spacing>4</spacing>
+        <wrapstyle>selection</wrapstyle>
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="selector">
+                    <position>-5,0</position>
+                    <filename>playback/selector-50x30.png</filename>
+                    <alpha>0</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,50,30</area>
+                    <font>basesmallgrey</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <font>basesmallselected</font>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="selector">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseupscrollarrow" />
+        <statetype name="downscrollarrow" from="basedownscrollarrow" />
+    </buttonlist>
+    
+    
+    <!-- Base definition of a button -->
+    <button name="basebutton">
+        <position>0,0</position>
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,200,30</area>
+                    <filename>shared/buttonbackground-200x30.png</filename>
+                </imagetype>
+                <textarea name="text">
+                    <area>0,0,200,30</area>
+                    <align>allcenter</align>
+                    <font>basemedium</font>
+                    <font state="selected">basemedium</font>
+                    <font state="disabled">basemediumgrey</font>
+                </textarea>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <filename>shared/buttonbackground-selected-200x30.png</filename>
+                </imagetype>
+                <textarea name="text">
+                    <align>center,vcenter</align>
+                    <cutdown>yes</cutdown>
+                    <case>upper</case>
+                    <font>basemediumgrey</font>
+                </textarea>
+            </state>
+            <state name="disabled" from="active">
+                <imagetype name="background">
+                    <filename>shared/buttonbackground-200x30.png</filename>
+                    <alpha>180</alpha>
+                </imagetype>
+            </state>
+            <state name="pushed" from="active">
+                <imagetype name="background">
+                    <filename>shared/buttonbackground-pushed-200x30.png</filename>
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+    </button>
+    
+    <!-- Base definition of a wider button -->
+    <button name="basewidebutton">
+        <position>0,0</position>
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,380,30</area>
+                    <filename>playback/selector-380x30.png</filename>
+                    <alpha>150</alpha>
+                </imagetype>
+                <textarea name="text">
+                    <area>0,0,380,30</area>
+                    <align>allcenter</align>
+                    <font>basemedium</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="text">
+                    <case>upper</case>
+                </textarea>
+            </state>
+            <state name="inactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>127</alpha>
+                </imagetype>
+                <textarea name="text">
+                    <alpha>127</alpha>
+                </textarea>
+            </state>
+            <state name="disabled" from="active">
+                <imagetype name="background">
+                    <alpha>30</alpha>
+                </imagetype>
+                <textarea name="text">
+                    <alpha>30</alpha>
+                </textarea>
+            </state>
+            <state name="pushed" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+    </button>
+    
+    <button name="basesearchbutton">
+        <area>0,0,20,20</area>
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="background">
+                    <filename>icons/lb-check-empty.png</filename>
+                </imagetype>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <filename>icons/lb-check-empty.png</filename>
+                </imagetype>
+            </state>
+            <state name="disabled" from="active" />
+            <state name="pushed" from="active">
+                <imagetype name="background">
+                    <filename>icons/lb-check-full.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </button>
+    
+    <!-- Base definition of a button -->
+    <button name="basepopupbutton">
+        <position>0,0</position>
+        <statetype name="buttonstate">
+            <state name="active">
+                <area>0,0,590,50</area>
+                <imagetype name="buttonbackground">
+                    <filename>shared/buttonbackground-selected.png</filename>
+                    <alpha>40</alpha>
+                </imagetype>
+                	
+                <textarea name="text">
+                    <area>0,0,100%,50</area>
+                    <font>menufont</font>
+                    <align>allcenter</align>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="inactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>127</alpha>
+                </imagetype>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="text">
+                    <area>0,0,100%,50</area>
+                    <font>menuselectfont</font>
+                    <case>upper</case>
+                </textarea>
+            </state>
+            <state name="pushed" from="active">
+                <imagetype name="buttonbackground">
+                    <filename>shared/buttonbackground-pushed.png</filename>
+                </imagetype>
+                <textarea name="text">
+                    <area>20,0,100%,50</area>
+                    <font>menuselectfont</font>
+                    <case>upper</case>
+                </textarea>
+            </state>
+        </statetype>
+    </button>
+    
+    <!-- Base definition of a button that has an icon to go back -->
+    <button name="basepopupbuttonback" from="basepopupbutton">
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="back">
+                    <position>5,10</position>    
+                    <filename>icons/edit-undo.png</filename>
+                    <alpha>100</alpha>
+                </imagetype>
+            </state>
+            <state name="inactive">
+            </state>
+            <state name="selected">
+                <imagetype name="back">
+                    <position>5,10</position>    
+                    <filename>icons/edit-undo.png</filename>
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="pushed">
+            </state>
+        </statetype>
+    </button>
+     
+    
+    <!-- Base definition of a button that has an icon to indicate it is used to save -->
+    <button name="basepopupbuttonsave" from="basepopupbutton">
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="save">
+                    <position>5,10</position>    
+                    <filename>icons/file-saveas.png</filename>
+                    <alpha>100</alpha>
+                </imagetype>
+            </state>
+            <state name="inactive">
+            </state>
+            <state name="selected">
+                <imagetype name="save">
+                    <position>5,10</position>    
+                    <filename>icons/file-saveas.png</filename>
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="pushed">
+            </state>
+        </statetype>
+    </button>
+     
+    
+    <!-- Base definition of a button that has an icon to cancel -->
+    <button name="basepopupbuttoncancel" from="basepopupbutton">
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="cancel">
+                    <position>5,10</position>    
+                    <filename>icons/gtk-cancel.png</filename>
+                    <alpha>100</alpha>
+                </imagetype>
+            </state>
+            <state name="inactive">
+            </state>
+            <state name="selected">
+                <imagetype name="cancel">
+                    <position>5,10</position>    
+                    <filename>icons/gtk-cancel.png</filename>
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="pushed">
+            </state>
+        </statetype>
+    </button>
+     
+    
+    <!-- Base definition of a button that has an icon to accept -->
+    <button name="basepopupbuttonok" from="basepopupbutton">
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="yes">
+                    <position>5,10</position>    
+                    <filename>icons/yes.png</filename>
+                    <alpha>100</alpha>
+                </imagetype>
+            </state>
+            <state name="inactive">
+            </state>
+            <state name="selected">
+                <imagetype name="yes">
+                    <position>5,10</position>    
+                    <filename>icons/yes.png</filename>
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="pushed">
+            </state>
+        </statetype>
+    </button>
+     
+    
+    <!-- Base definition of checkbox -->
+    <checkbox name="basecheckbox">
+        <area>0,0,32,32</area>
+        <statetype name="background">
+            <state name="active">
+                <imagetype name="background">
+                    <filename>icons/no.png</filename>
+                    <alpha>200</alpha>
+                </imagetype>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="disabled" />
+        </statetype>
+        <statetype name="checkstate">
+            <area>0,0,32,32</area>
+            <state type="off" />
+            <state type="half">
+                <imagetype name="yesno">
+                    <filename>icons/yesno.png</filename>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="mark">
+                    <filename>icons/yes.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </checkbox>
+    
+    <!-- base button that has no label -->
+    <button name="basebuttonnolabel">
+        <area>0,0,32,32</area>
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="background">
+                    <filename>icons/no.png</filename>
+                    <alpha>200</alpha>
+                </imagetype>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="disabled" />
+            <state type="pushed">
+                <imagetype name="mark">
+                    <filename>icons/yes.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </button>
+    
+    
+    
+    
+    <!-- Base definition of a spinbox -->
+    <spinbox name="basespinbox">
+        <position>0,0</position>
+        <layout>horizontal</layout>
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,580,40</area>
+                    <filename>playback/spinbox-580x40.png</filename>
+                    <alpha>150</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,580,40</area>
+                    <align>allcenter</align>
+                    <font>basemedium</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <case>upper</case>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>127</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>127</alpha>
+                </textarea>
+            </state>
+            <state name="disabled" from="active">
+                <imagetype name="background">
+                    <alpha>30</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>30</alpha>
+                </textarea>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseleftscrollarrow" />
+        <statetype name="downscrollarrow" from="baserightscrollarrow" />
+    </spinbox>
+    
+    
+    <!-- Base definition of a wide spinbox -->
+    <spinbox name="basewidespinbox">
+        <position>0,0</position>
+        <layout>horizontal</layout>
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,980,40</area>
+                    <filename>playback/spinbox-980x40.png</filename>
+                    <alpha>150</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,980,40</area>
+                    <align>allcenter</align>
+                    <font>basemedium</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <case>upper</case>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>127</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>127</alpha>
+                </textarea>
+            </state>
+            <state name="disabled" from="active">
+                <imagetype name="background">
+                    <alpha>30</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>30</alpha>
+                </textarea>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseleftscrollarrow" />
+        <statetype name="downscrollarrow" from="baserightscrollarrow">
+            <position>980,8</position>
+        </statetype>
+    </spinbox>
+    
+    <!-- Base definition of a very wide spinbox -->
+    <spinbox name="baseverywidespinbox">
+        <position>0,0</position>
+        <layout>horizontal</layout>
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,1280,40</area>
+                    <filename>playback/spinbox-1280x40.png</filename>
+                    <alpha>150</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,1280,40</area>
+                    <align>allcenter</align>
+                    <font>basemedium</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <case>upper</case>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>127</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>127</alpha>
+                </textarea>
+            </state>
+            <state name="disabled" from="active">
+                <imagetype name="background">
+                    <alpha>30</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>30</alpha>
+                </textarea>
+            </state>
+        </statetype>
+         
+        <statetype name="upscrollarrow" from="baseleftscrollarrow" />
+        <statetype name="downscrollarrow" from="baserightscrollarrow">
+            <position>1280,8</position>
+        </statetype>
+    </spinbox>
+    
+    <!-- Base definition of a list in 'selector' configuration -->
+    <buttonlist name="baseselector">
+        <position>0,0</position>
+        <layout>horizontal</layout>
+        <statetype name="buttonitem">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,1280,40</area>
+                    <filename>playback/spinbox-1280x40.png</filename>
+                    <alpha>150</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>0,0,1280,40</area>
+                    <align>allcenter</align>
+                    <font>basemedium</font>
+                    <cutdown>yes</cutdown>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <case>upper</case>
+                </textarea>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="buttonbackground">
+                    <alpha>127</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>127</alpha>
+                </textarea>
+            </state>
+            <state name="disabled" from="active">
+                <imagetype name="background">
+                    <alpha>30</alpha>
+                </imagetype>
+                <textarea name="buttontext">
+                    <alpha>30</alpha>
+                </textarea>
+            </state>
+        </statetype>
+         
+        <statetype name="upscrollarrow" from="baseleftscrollarrow" />
+        <statetype name="downscrollarrow" from="baserightscrollarrow">
+            <position>1280,8</position>
+        </statetype>
+        
+    </buttonlist>
+    
+    <!-- Base definition of a list in wide 'selector' configuration -->
+    <buttonlist name="basewideselector">
+        <area>0,0,395,40</area>
+        <layout>horizontal</layout>
+        <buttonarea>0,0,375,100%</buttonarea>
+        <statetype name="buttonitem">
+            <state name="active">
+                <area>0,0,375,40</area>
+                <imagetype name="buttonbackground">
+                    <filename>shared/selector_wide_background.png</filename>
+                </imagetype>
+                <textarea name="buttontext">
+                    <area>5,5,365,30</area>
+                    <font>basesmall</font>
+                    <cutdown>yes</cutdown>
+                    <align>left,vcenter</align>
+                </textarea>
+            </state>
+            <state name="selectedactive" from="active">
+                <imagetype name="buttonbackground">
+                    <filename>shared/selector_wide_background_selected.png</filename>
+                </imagetype>
+            </state>
+            <state name="selectedinactive" from="active">
+                <imagetype name="buttonbackground">
+                    <filename>shared/selector_wide_background_inactive.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="downscrollarrow" from="basedownscrollarrow">
+            <position>380,2</position>
+        </statetype>
+        <statetype name="upscrollarrow" from="baseupscrollarrow">
+            <position>380,21</position>
+        </statetype>
+    </buttonlist>
+    
+    <!-- Base definition of a textarea -->
+    <textarea name="basetextarea">
+        <area>0,0,10,10</area>
+        <font>basesmall</font>
+        <multiline>no</multiline>
+        <align>left</align>
+    </textarea>
+    
+    <!-- TODO Base definition of a textedit -->
+    <textedit name="basetextedit">
+        <area>0,0,350,36</area>
+        <statetype name="background">
+            <state name="active">
+                <imagetype name="background">
+                    <filename>shared/textedit_background.png</filename>
+                    <alpha>150</alpha>	  
+                </imagetype>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="inactive" from="active">
+                <imagetype name="background">
+                    <alpha>150</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+        <imagetype name="cursor">
+            <filename>shared/cursor.png</filename>
+        </imagetype>
+        <textarea name="text">
+            <area>6,6,338,30</area>
+            <font>basesmallblack</font>
+        </textarea>
+    </textedit>
+    
+    <textedit name="basetexteditwide" from="basetextedit">
+        <area>0,0,560,36</area>
+        <statetype name="background">
+            <state name="active">
+                <imagetype name="background">
+                    <area>0,0,560,36</area>
+                </imagetype>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <alpha>255</alpha>
+                </imagetype>
+            </state>
+            <state name="inactive" from="active">
+                <imagetype name="background">
+                    <alpha>150</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+        <textarea name="text">
+            <area>6,6,548,30</area>
+        </textarea>
+    </textedit>
+    
+    
+    <!--  
+	<statetype name="baserating">
+	    <area>471,122,187,25</area>
+	    <state name="0">
+	    </state>
+	    <state name="1">
+		<imagetype name="stars">
+		    <filename>images/halfstar.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="2">
+		<imagetype name="stars">
+		    <filename>images/1star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="3">
+		<imagetype name="stars">
+		    <filename>images/1.5star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="4">
+		<imagetype name="stars">
+		    <filename>images/2star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="5">
+		<imagetype name="stars">
+		    <filename>images/2.5star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="6">
+		<imagetype name="stars">
+		    <filename>images/3star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="7">
+		<imagetype name="stars">
+		    <filename>images/3.5star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="8">
+		<imagetype name="stars">
+		    <filename>images/4star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="9">
+		<imagetype name="stars">
+		    <filename>images/4.5star.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="10">
+		<imagetype name="stars">
+		    <filename>images/5star.png</filename>
+		</imagetype>
+	    </state>
+	</statetype>
+	-->
+    
+    <!-- Base definition of a progressbar -->
+    <progressbar name="baseprogressbar">
+        <area>0,0,1680,1050</area>
+        <layout>horizontal</layout>
+        <style>reveal</style>
+        <imagetype name="background">
+            <filename>shared/progressbar/progressbar_background.png</filename>
+        </imagetype>
+        <imagetype name="progressimage">
+            <filename>shared/progressbar/progressbar_full.png</filename>
+        </imagetype>
+        
+    </progressbar>
+    
+    <!-- Popup Dialogue Box -->
+    <window name="MythPopupBox">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        <textarea name="messagearea" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,200</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        <buttonlist name="list" from="basebuttonlist">
+            <area>5,205,590,580</area>
+            <drawfrombottom>yes</drawfrombottom>
+            <align>center</align>
+            <showarrow>no</showarrow>
+            <statetype name="buttonitem">
+                <state name="active">
+                    
+                    <imagetype name="buttonbackground">
+                        <filename>shared/buttonbackground-selected.png</filename>
+                        <position>0,0</position>
+                        <alpha>0</alpha>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>0,0,100%,50</area>
+                        <align>allcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground">
+                        <alpha>250</alpha>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <font>menuselectfont</font>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+    
+    <!-- Fullscreen Dialogue Box -->
+    <window name="MythDialogBox" from="MythPopupBox">
+        <textarea name="title" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,30</area>
+            <font>basetitle</font>
+            <align>allcenter</align>
+        </textarea>
+        <textarea name="messagearea" from="basetextarea">
+            <area>5,30,590,160</area>
+            <multiline>yes</multiline>
+            <font>basemedium</font>
+            <align>allcenter</align>
+        </textarea>
+        <buttonlist name="list" />
+    </window>
+    
+    <window name="MythBusyDialog">
+        <area>-1,-1,1680,1050</area>
+        <imagetype name="animation">
+            <position>521,425</position>
+            <filepattern low="0" high="13">shared/progressbar/progressbar_%1.png</filepattern>
+            <delay>30</delay>
+        </imagetype>
+        <textarea name="message" from="basetextarea">
+            <font>basetitle</font>
+            <area>360,325,1000,65</area>
+            <align>allcenter</align>
+        </textarea>
+    </window>
+    
+    <window name="MythProgressDialog">
+        <area>-1,-1,1680,1050</area>
+        <textarea name="message" from="basetextarea">
+            <font>basetitle</font>
+            <area>360,330,1000,65</area>
+            <align>allcenter</align>
+        </textarea>
+        <progressbar name="progressbar" from="baseprogressbar">
+        </progressbar>
+        <textarea name="progresstext" from="basetextarea">
+            <area>360,315,1000,30</area>
+            <align>center,top</align>
+        </textarea>
+    </window>
+    
+    <window name="MythConfirmationDialog" from="MythPopupBox">
+        <textarea name="message" from="basetextarea">
+            <area>5,5,590,200</area>
+            <font>basetitle</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        <button name="ok" from="basepopupbuttonok">
+            <position>5,655</position>
+            <value>OK</value>
+        </button>
+        <button name="cancel" from="basepopupbuttoncancel">
+            <position>5,705</position>
+            <value>Cancel</value>
+        </button>
+    </window>
+    
+    <window name="MythTextInputDialog" from="MythPopupBox">
+        
+        <textarea name="message" from="basetextarea">
+            <area>360,235,860,30</area>
+            <align>center</align>
+        </textarea>
+        <textedit name="input" from="basetextedit">
+            <position>495,280</position>
+        </textedit>
+        <button name="ok" from="basepopupbuttonok">
+            <position>5,705</position>
+            <value>OK</value>
+        </button>
+    </window>
+    
+    <!-- 	 A basic search dialog used everywhere -->
+    <window name="MythSearchDialog" from="MythPopupBox">
+        <textarea name="title" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,200</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        <textedit name="input" from="basetextedit">
+            <position>125,230</position>
+        </textedit>
+        <buttonlist name="itemlist" from="basebuttonlist">
+            <area>15,300,590,360</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                </state>
+                <state name="selectedinactive">
+                </state>
+                <state name="selectedactive">
+                </state>
+            </statetype>
+        </buttonlist>
+        <button name="cancel" from="basepopupbuttoncancel">
+            <position>5,650</position>
+            <value>Cancel</value>
+        </button>
+        <button name="ok" from="basepopupbuttonok">
+            <position>5,705</position>
+            <value>OK</value>
+        </button>
+    </window>
+    
+    <window name="MythFileBrowser">
+        <imagetype name="filler">
+            <area>0,0,1680,1050</area>
+            <filename>shared/background-main.png</filename>
+        </imagetype>
+        
+        <textarea name="filename" from="basetextarea">
+            <area>22,678,475,38</area>
+            <cutdown>yes</cutdown>
+            <font>baselarge</font>
+            <value>Filename</value>
+        </textarea>
+        
+        <textedit name="location" from="basetextedit">
+            <position>756,126</position>
+        </textedit>
+        
+        <button name="back" from="basebutton">
+            <area>733,164,138,28</area>
+            <value>Up Level</value>
+        </button>
+        
+        <button name="home" from="basebutton">
+            <area>912,164,138,28</area>
+            <value>Home</value>
+        </button>
+        
+        <imagetype name="preview">
+            <area>733,205,335,321</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        
+        <textarea name="info" from="basetextarea">
+            <area>733,528,335,25</area>
+            <align>allcenter</align>
+        </textarea>
+        
+        <button name="cancel" from="basepopupbuttoncancel">
+            <position>912,552</position>
+            <value>Cancel</value>
+        </button>
+        
+        <button name="ok" from="basepopupbuttonok">
+            <position>733,552</position>
+            <value>Ok</value>
+        </button>
+        
+        <buttonlist name="filelist">
+            <area>192,120,531,480</area>
+            <layout>grid</layout>
+            <spacing>0</spacing>
+            <buttonarea>0,0,530,480</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,106,158</area>
+                    <imagetype name="buttonbackground" />
+                    <imagetype name="buttonimage">
+                        <area>0,0,106,158</area>
+                        <alpha>160</alpha>
+                    </imagetype>
+                    <statetype name="nodetype">
+                        <state name="folder">
+                            <imagetype name="icon">
+                                <area>50,50,53,40</area>
+                                <filename>gallery/folder.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder">
+                            <imagetype name="icon">
+                                <area>0,0,106,158</area>
+                                <filename>icons/1uparrow.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                        <state name="executable">
+                            <area>50,50,53,40</area>
+                            <imagetype name="icon">
+                                <area>0,0,106,158</area>
+                            </imagetype>
+                        </state>
+                        <state name="file">
+                            <area>50,50,53,40</area>
+                            <imagetype name="icon">
+                                <area>0,0,106,158</area>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedinactive" from="active" />
+                <state name="selectedactive">
+                    <area>-40,-40,180,240</area>
+                    <statetype name="nodetype">
+                        <state name="folder">
+                            <imagetype name="icon">
+                                <area>50,50,53,40</area>
+                                <filename>gallery/folder-open.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder">
+                            <imagetype name="icon">
+                                <area>50,50,53,40</area>
+                                <filename>gallery/folder-back.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="executable">
+                            <area>50,50,53,40</area>
+                            <imagetype name="icon">
+                            </imagetype>
+                        </state>
+                        <state name="file">
+                            <area>50,50,53,40</area>
+                            <imagetype name="icon">
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <imagetype name="buttonimage">
+                        <area>10,0,160,220</area>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        <textarea name="buttontext" from="basetextarea">
+            <area>22,678,475,38</area>
+            <cutdown>yes</cutdown>
+            <font>baselarge</font>
+        </textarea>
+    </window>
+    
+    <window name="videowindow">
+        <imagetype name="animation">
+            <position>521,425</position>
+            <filepattern low="0" high="13">shared/progressbar/progressbar_%1.png</filepattern>
+            <delay>1</delay>
+        </imagetype>
+        <textarea name="title" from="basetextarea">
+            <area>-1,-1,1680,1050</area>
+            <font>basetitle</font>
+            <align>allcenter</align>
+            <value>Playback starting ...</value>
+        </textarea>
+        
+    </window>
+</mythuitheme>

@@ -1,0 +1,1299 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<mythuitheme>
+    <!--  This XML file defines the Window that enables the user to watch a recorded program.-->
+    <window name="watchrecordings">
+        
+        
+        <!-- Fanart behind the recordings  (uncomment if you want it!)  
+	<imagetype name="fanart">
+	    <area>0,45,1680,945</area>
+	    <filename />
+	    <alpha>200</alpha>
+	</imagetype>
+	-->     
+        
+        <!--  we use one large background image to draw all widgets on top	  -->
+        <imagetype name="backgroundlogo" from="basebackgroundlogo" />
+        
+        <!--  Clock and Date on the right	  -->
+        <clock name="clock" from="baseclock" />
+        <clock name="date" from="basedate" />
+        
+        <!--  line dividing the screen	  -->
+        <imagetype name="divider">
+            <area>418,136,3,580</area>
+            <filename>playback/divider.png</filename>
+        </imagetype>
+        
+        <!--  Tabs for the recording groups "comment them out if not required	-->  
+        <imagetype name="recgrouptabs">
+            <area>40,734,1358,35</area>
+            <filename>playback/grouptabs.png</filename>
+        </imagetype>
+        
+        <!--  background of the banner	  -->
+        <imagetype name="bannerbackground">
+            <area>0,0,768,150</area>
+            <filename>playback/bannerbackground.png</filename>
+        </imagetype>
+         
+        
+        <!--  background of the screenshot of the recording	  -->
+        <imagetype name="previewbackgound">
+            <filename>playback/previewbackground.png</filename>
+            <position>0,800</position>
+        </imagetype>
+        
+        <!-- The banner of the current show -->
+        <imagetype name="banner">
+            <area>5,5,758,140</area>
+            <filename />
+            <mask>playback/bannermask.png</mask>
+        </imagetype>
+        
+        <!--  draws the recording groups on top of the tabs	  -->
+        <buttonlist name="recgroups">
+            <area>39,730,1360,35</area>
+            <spacing>0</spacing>
+            <scrollstyle>center</scrollstyle>
+            <layout>horizontal</layout>
+            <buttonarea>0,0,100%,100%</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,272,40</area>
+                    <textarea name="buttontext">
+                        <area>0,0,95%,40</area>
+                        <align>center</align>
+                        <cutdown>yes</cutdown>
+                        <font>basesmall</font>
+                        <alpha>200</alpha>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active" />
+                <state name="selectedinactive" from="active" />
+            </statetype>
+        </buttonlist>
+        
+        <!--  This is the left side of the selections. It shows the groups that are available to the user.	  -->
+        
+        <buttonlist name="groups" from="basegroups">
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="buttontext">
+                        <area>0,0,360,32</area>
+                        <font>basesmallgrey</font>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <textarea name="name" from="buttontext">
+                        <area>0,0,360,35</area>
+                        <font>basesmallselected</font>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedinactive">
+                    <textarea name="name" from="buttontext">
+                        <font>basesmallgray</font>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <!--  This is the right side of the selections. It shows the recordings that are available to the user.	  -->
+        
+        <buttonlist name="recordings" from="basebuttonlist2">
+            <area>430,136,965,580</area>
+            <buttonarea>0,0,100%,100%</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <area>0,0,765,30</area>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <font>timedategray</font>
+                        <area>765,0,100,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>865,0,100,30</area>
+                    </textarea>
+                    
+                    <!--  icon if recording was watched	  -->  
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>0,0,30,30</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>765,0</position>
+                                <filename>icons/watched.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    
+                    <!--  icon displaying the state of running jobs	  -->  
+                    <statetype name="jobstate">
+                        <area>0,0,30,30</area>
+                        <state name="recording">
+                            <imagetype name="recording">
+                                <position>765,0</position>
+                                <filename>icons/recording.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="transcoding">
+                                <position>765,0</position>
+                                <filename>icons/transcoding.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    
+                    <!--  icon if a recording is in a playlist	  -->  
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <area>0,0,30,30</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>730,0</position>
+                                <filename>icons/playlist.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    	
+                </state>
+                <state name="selectedactive">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <font>basesmallselected</font>
+                        <area>0,0,765,30</area>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <font>timedate</font>
+                        <area>765,0,100,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>865,0,100,30</area>
+                    </textarea>
+                    
+                    <!--  icon if recording was watched	  -->  
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>0,0,30,30</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>765,0</position>
+                                <filename>icons/watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    
+                    <!--  icon displaying the state of running jobs	  -->  
+                    <statetype name="jobstate">
+                        <area>0,0,30,30</area>
+                        <state name="recording">
+                            <imagetype name="recording">
+                                <position>765,0</position>
+                                <filename>icons/recording.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="transcoding">
+                                <position>765,0</position>
+                                <filename>icons/transcoding.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    
+                    <!--  icon if a recording is in a playlist	  -->  
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <area>0,0,30,30</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>730,0</position>
+                                <filename>icons/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedinactive">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <font>basesmallgray</font>
+                        <area>0,0,765,30</area>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <font>timedategray</font>
+                        <area>765,0,100,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>865,0,100,30</area>
+                    </textarea>
+                    
+                    <!--  icon if recording was watched	  -->  
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>0,0,30,30</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>765,0</position>
+                                <filename>icons/watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    
+                    <!--  icon displaying the state of running jobs	  -->  
+                    <statetype name="jobstate">
+                        <area>0,0,30,30</area>
+                        <state name="recording">
+                            <imagetype name="recording">
+                                <position>765,0</position>
+                                <filename>icons/recording.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="transcoding">
+                                <position>765,0</position>
+                                <filename>icons/transcoding.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    
+                    <!--  icon if a recording is in a playlist	  -->  
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <area>0,0,30,30</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>730,0</position>
+                                <filename>icons/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <!--  icon that shows what kind of videtype the recording is -->
+        
+        <statetype name="videoprops">
+            <position>890,995</position>
+            <showempty>yes</showempty>
+            <state name="hdtv">
+                <imagetype name="hdtv">
+                    <filename>icons/hdrec.png</filename>
+                </imagetype>
+            </state>
+            <state name="widescreen">
+                <imagetype name="widescreen">
+                    <filename>icons/wide.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows the kind of audio  -->
+        
+        <statetype name="audioprops">
+            <position>945,995</position>
+            <showempty>yes</showempty>
+            <state name="stereo">
+                <imagetype name="stereo">
+                    <filename>icons/stereo.png</filename>
+                </imagetype>
+            </state>
+            <state name="surround">
+                <imagetype name="surround">
+                    <filename>icons/surround.png</filename>
+                </imagetype>
+            </state>
+            <state name="dolby">
+                <imagetype name="dolby">
+                    <filename>icons/dd.png</filename>
+                </imagetype>
+            </state>
+            <state name="mono">
+                <imagetype name="mono">
+                    <filename>icons/mono.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  These are the icons used to show metadata like "Surround" or "Subtitles" of a show	  -->    
+        
+        <statetype name="autoexpire">
+            <state name="yes">
+                <position>1000,995</position>
+                <imagetype name="autoexpire">
+                    <filename>icons/clock.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="commflagged">
+            <state name="yes">
+                <position>1050,995</position>
+                <imagetype name="commflagged">
+                    <filename>icons/commflagged.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="bookmark">
+            <state name="yes">
+                <position>1100,995</position>
+                <imagetype name="bookmark">
+                    <filename>icons/bookmark.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="cutlist">
+            <position>1150,995</position>
+            <state name="yes">
+                <imagetype name="cutlist">
+                    <filename>icons/editcut.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows if a show has been trancoded-->
+        <statetype name="transcoded">
+            <position>1200,995</position>
+            <state name="yes">
+                <imagetype name="transcoded">
+                    <filename>icons/transcoded.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows if a show is being processed -->
+        <statetype name="processing">
+            <position>1250,995</position>
+            <state name="yes">
+                <imagetype name="processing">
+                    <filename>icons/exit.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows if the recording has subtitles and what kind -->
+        
+        <statetype name="subtitletypes">
+            <position>1300,995</position>
+            <showempty>yes</showempty>
+            <state name="cc">
+                <imagetype name="cc">
+                    <filename>icons/cc.png</filename>
+                </imagetype>
+            </state>
+            <state name="subtitles">
+                <imagetype name="subtitles">
+                    <filename>icons/subs.png</filename>
+                </imagetype>
+            </state>
+            <state name="onscreensub">
+                <imagetype name="onscreensub">
+                    <filename>icons/subs_onscreen.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--    The title of a show	  -->
+        <textarea name="title" from="basetextarea">
+            <area>772,46,620,42</area>
+            <font>basetitle</font>
+            <cutdown>yes</cutdown>
+        </textarea>
+        
+        <!--  The subtitle of a show  -->
+        <textarea name="subtitle" from="basetextarea">
+            <area>775,95,620,30</area>
+            <cutdown>yes</cutdown>
+        </textarea>
+        
+        <!--  The little screenshot/preview of the recording -->
+        <imagetype name="preview">
+            <position>5,810</position>
+            <mask>playback/previewmask.png</mask>
+        </imagetype>
+        
+        <!--  show the coverart on the right / resize and ad a mirror effect -->
+        <imagetype name="coverart">
+            <area>1400,180,280,416</area>
+            <reflection axis="vertical" shear="0" scale="95" length="100" />
+        </imagetype>
+        
+        <!--  
+	the description field, that in this case fuses subtitle + rating + description into one
+	-->
+        <textarea name="description" from="basetextarea">
+            <area>350,770,1035,210</area>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <template>%YEARSTARS% %DESCRIPTION% (%LENMINS%)</template>
+        </textarea>
+        <textarea name="filesize_str" from="basetextarea">
+            <area>50,770,1000,30</area>
+        </textarea>
+        <textarea name="freereport" from="basetextarea">
+            <area>350,1010,600,175</area>
+        </textarea>
+        
+        <!--  a text that states the obvious: there are no recordings in that group	  -->
+        <textarea name="norecordings">
+            <area>430,75,760,300</area>
+            <font>basemedium</font>
+            <value></value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+    </window>
+    
+    <window name="deleterecordings">
+        <!-- this is a nearly perfect copy of watchrecordings, but withouth descriptions and file size -->
+        <fontdef name="timedate" face="DejaVu Sans Condensed">
+            <color>#FFFFFF</color>
+            <pixelsize>25</pixelsize>
+            <weight>normal</weight>
+        </fontdef>
+        
+        <fontdef name="timedategray" face="DejaVu Sans Condensed">
+            <color>#999999</color>
+            <pixelsize>25</pixelsize>
+            <weight>normal</weight>
+        </fontdef>
+        
+        <!--  we use one large background image to draw all widgets on top	  -->
+        <imagetype name="backgroundlogo" from="basebackgroundlogo" />
+        
+        <!--  Clock and Date on the right	  -->
+        <clock name="clock" from="baseclock" />
+        <clock name="date" from="basedate" />
+        
+        <!--  line dividing the screen	  -->
+        <imagetype name="divider">
+            <area>418,136,3,580</area>
+            <filename>playback/divider.png</filename>
+        </imagetype>
+        
+        <!--  Tabs for the recording groups "comment them out if not required	-->  
+        <imagetype name="recgrouptabs">
+            <area>40,926,1358,35</area>
+            <filename>playback/grouptabs.png</filename>
+        </imagetype>
+        
+        <!--  background of the banner	  -->
+        <imagetype name="bannerbackground">
+            <area>0,0,768,150</area>
+            <filename>playback/bannerbackground.png</filename>
+        </imagetype>
+         
+        
+        <!-- The banner of the current show -->
+        <imagetype name="banner">
+            <area>5,5,758,140</area>
+            <filename />
+            <mask>playback/bannermask.png</mask>
+        </imagetype>
+        
+        <!--  draws the recording groups on top of the tabs	  -->
+        <buttonlist name="recgroups">
+            <area>39,922,1360,35</area>
+            <spacing>0</spacing>
+            <scrollstyle>center</scrollstyle>
+            <layout>horizontal</layout>
+            <buttonarea>0,0,100%,100%</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,272,40</area>
+                    <textarea name="buttontext">
+                        <area>0,0,95%,40</area>
+                        <align>center</align>
+                        <cutdown>yes</cutdown>
+                        <font>basesmall</font>
+                        <alpha>200</alpha>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active" />
+                <state name="selectedinactive" from="active" />
+            </statetype>
+        </buttonlist>
+        
+        <!--  This is the left side of the selections. It shows the groups that are available to the user.	  -->
+        
+        <buttonlist name="groups" from="basegroups">
+            <area>52,136,380,790</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="buttontext">
+                        <area>0,0,360,32</area>
+                        <font>basesmallgrey</font>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <textarea name="name" from="buttontext">
+                        <area>0,0,360,35</area>
+                        <font>basesmallselected</font>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedinactive">
+                    <textarea name="name" from="buttontext">
+                        <font>basesmallgray</font>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <!--  This is the right side of the selections. It shows the recordings that are available to the user.	  -->
+        
+        <buttonlist name="recordings" from="basebuttonlist2">
+            <area>430,136,600,790</area>
+            <buttonarea>0,0,100%,100%</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <area>0,0,770,32</area>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="filesize_str" from="titlesubtitle">
+                        <font>timedategray</font>
+                        <area>820,0,130,30</area>
+                        <align>right</align>
+                    </textarea>
+                    
+                    <!--  icon if recording was watched	  -->  
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>0,0,32,32</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>770,0</position>
+                                <filename>icons/watched.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    
+                    <!--  icon displaying the state of running jobs	  -->  
+                    <statetype name="jobstate">
+                        <area>0,0,32,32</area>
+                        <state name="recording">
+                            <imagetype name="recording">
+                                <position>770,0</position>
+                                <filename>icons/recording.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="transcoding">
+                                <position>790,0</position>
+                                <filename>icons/transcoding.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    
+                    <!--  icon if a recording is in a playlist	  -->  
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <area>0,0,32,32</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>750,0</position>
+                                <filename>icons/playlist.png</filename>
+                                <alpha>120</alpha>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    	
+                </state>
+                <state name="selectedactive">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <font>basesmallselected</font>
+                        <area>0,0,770,32</area>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <font>timedate</font>
+                        <area>820,0,65,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>895,0,65,30</area>
+                        <align>right</align>
+                    </textarea>
+                    
+                    <!--  icon if recording was watched	  -->  
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>0,0,32,32</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>770,0</position>
+                                <filename>icons/watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    
+                    <!--  icon displaying the state of running jobs	  -->  
+                    <statetype name="jobstate">
+                        <area>0,0,32,32</area>
+                        <state name="recording">
+                            <imagetype name="recording">
+                                <position>770,0</position>
+                                <filename>icons/recording.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="transcoding">
+                                <position>790,0</position>
+                                <filename>icons/transcoding.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    
+                    <!--  icon if a recording is in a playlist	  -->  
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <area>0,0,32,32</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>750,0</position>
+                                <filename>icons/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedinactive">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <font>basesmallgray</font>
+                        <area>0,0,770,32</area>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <font>timedategray</font>
+                        <area>820,0,65,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>895,0,65,30</area>
+                        <align>right</align>
+                    </textarea>
+                    
+                    <!--  icon if recording was watched	  -->  
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>0,0,32,32</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>770,0</position>
+                                <filename>icons/watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    
+                    <!--  icon displaying the state of running jobs	  -->  
+                    <statetype name="jobstate">
+                        <area>0,0,32,32</area>
+                        <state name="recording">
+                            <imagetype name="recording">
+                                <position>770,0</position>
+                                <filename>icons/recording.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="transcoding">
+                                <position>790,0</position>
+                                <filename>icons/transcoding.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    
+                    <!--  icon if a recording is in a playlist	  -->  
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <area>0,0,32,32</area>
+                                <preserveaspect>true</preserveaspect>
+                                <position>750,0</position>
+                                <filename>icons/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+        
+        <!--  icon that shows what kind of videtype the recording is -->
+        
+        <statetype name="videoprops">
+            <position>890,995</position>
+            <showempty>yes</showempty>
+            <state name="hdtv">
+                <imagetype name="hdtv">
+                    <filename>icons/hdrec.png</filename>
+                </imagetype>
+            </state>
+            <state name="widescreen">
+                <imagetype name="widescreen">
+                    <filename>icons/wide.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows the kind of audio  -->
+        
+        <statetype name="audioprops">
+            <position>945,995</position>
+            <showempty>yes</showempty>
+            <state name="stereo">
+                <imagetype name="stereo">
+                    <filename>icons/stereo.png</filename>
+                </imagetype>
+            </state>
+            <state name="surround">
+                <imagetype name="surround">
+                    <filename>icons/surround.png</filename>
+                </imagetype>
+            </state>
+            <state name="dolby">
+                <imagetype name="dolby">
+                    <filename>icons/dd.png</filename>
+                </imagetype>
+            </state>
+            <state name="mono">
+                <imagetype name="mono">
+                    <filename>icons/mono.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  These are the icons used to show metadata like "Surround" or "Subtitles" of a show	  -->    
+        
+        <statetype name="autoexpire">
+            <state name="yes">
+                <position>1000,995</position>
+                <imagetype name="autoexpire">
+                    <filename>icons/clock.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="commflagged">
+            <state name="yes">
+                <position>1050,995</position>
+                <imagetype name="commflagged">
+                    <filename>icons/commflagged.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="bookmark">
+            <state name="yes">
+                <position>1100,995</position>
+                <imagetype name="bookmark">
+                    <filename>icons/bookmark.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <statetype name="cutlist">
+            <position>1150,995</position>
+            <state name="yes">
+                <imagetype name="cutlist">
+                    <filename>icons/editcut.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows if a show has been trancoded-->
+        <statetype name="transcoded">
+            <position>1200,995</position>
+            <state name="yes">
+                <imagetype name="transcoded">
+                    <filename>icons/transcoded.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows if a show is being processed -->
+        <statetype name="processing">
+            <position>1250,995</position>
+            <state name="yes">
+                <imagetype name="processing">
+                    <filename>icons/exit.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--  icon that shows if the recording has subtitles and what kind -->
+        
+        <statetype name="subtitletypes">
+            <position>1300,995</position>
+            <showempty>yes</showempty>
+            <state name="cc">
+                <imagetype name="cc">
+                    <filename>icons/cc.png</filename>
+                </imagetype>
+            </state>
+            <state name="subtitles">
+                <imagetype name="subtitles">
+                    <filename>icons/subs.png</filename>
+                </imagetype>
+            </state>
+            <state name="onscreensub">
+                <imagetype name="onscreensub">
+                    <filename>icons/subs_onscreen.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        
+        <!--    The title of a show	  -->
+        <textarea name="title" from="basetextarea">
+            <area>772,46,620,42</area>
+            <font>basetitle</font>
+            <cutdown>yes</cutdown>
+        </textarea>
+        
+        <!--  The subtitle of a show  -->
+        <textarea name="subtitle" from="basetextarea">
+            <area>775,95,620,30</area>
+            <cutdown>yes</cutdown>
+        </textarea>
+        
+        <!--  show the coverart on the right / resize and ad a mirror effect -->
+        <imagetype name="coverart">
+            <area>1400,180,280,416</area>
+            <reflection axis="vertical" shear="0" scale="95" length="100" />
+        </imagetype>
+        
+        <!--  a text that states the obvious: there are no recordings in that group	  -->
+        <textarea name="norecordings">
+            <area>430,75,760,300</area>
+            <font>basemedium</font>
+            <value></value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+    </window>
+    
+    <window name="groupselector">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        
+        <textarea name="label" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,200</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+        
+        <!-- it would be nice to solve this with an inheritance, but how? -->
+        <buttonlist name="groups" from="basebuttonlist">
+            <area>5,205,590,580</area>
+            <drawfrombottom>yes</drawfrombottom>
+            <align>center</align>
+            <showarrow>no</showarrow>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <imagetype name="buttonbackground">
+                        <filename>shared/buttonbackground-selected.png</filename>
+                        <position>0,0</position>
+                        <alpha>0</alpha>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>0,0,100%,50</area>
+                        <align>allcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground">
+                        <alpha>250</alpha>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <font>menuselectfont</font>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+    
+    <window name="changeview">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        <textarea name="title">
+            <value>Change View</value>
+        </textarea>
+        
+        <checkbox name="titles" from="basecheckbox">
+            <position>90,100</position>
+        </checkbox>
+        
+        <textarea name="titlelabel" from="basetextarea">
+            <area>140,100,300,30</area>
+            <value>Show Titles</value>
+        </textarea>
+        
+        <checkbox name="categories" from="basecheckbox">
+            <position>90,150</position>
+        </checkbox>
+        
+        <textarea name="catlabel" from="titlelabel">
+            <position>140,150</position>
+            <value>Show Categories</value>
+        </textarea>
+        
+        <checkbox name="recgroups" from="basecheckbox">
+            <position>90,200</position>
+        </checkbox>
+        
+        <textarea name="grouplabel" from="titlelabel">
+            <position>140,200</position>
+            <value>Show Recording Groups</value>
+        </textarea>
+        
+        <checkbox name="watchlist" from="basecheckbox">
+            <position>90,250</position>
+        </checkbox>
+        
+        <textarea name="watchlabel" from="titlelabel">
+            <position>140,250</position>
+            <value>Show Watch List</value>
+        </textarea>
+        
+        <checkbox name="searches" from="basecheckbox">
+            <position>90,300</position>
+        </checkbox>
+        
+        <textarea name="searchlabel" from="titlelabel">
+            <position>140,300</position>
+            <value>Show Searches</value>
+        </textarea>
+        
+        <checkbox name="livetv" from="basecheckbox">
+            <position>90,350</position>
+        </checkbox>
+        
+        <textarea name="livelabel" from="titlelabel">
+            <position>140,350</position>
+            <value>Show LiveTV</value>
+        </textarea>
+        
+        <button name="save" from="basepopupbuttonsave">
+            <position>5,705</position>
+            <value>Save</value>
+        </button>
+    </window>
+    
+    <window name="passwordchanger">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        <textarea name="label" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,200</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>Change Recording Group Password</value>
+        </textarea>
+        
+        <textarea name="oldpasslabel" from="basetextarea">
+            <area>58,180,300,30</area>
+            <value>Old Password:</value>
+        </textarea>
+        
+        <textedit name="oldpassword" from="basetextedit">
+            <position>58,210</position>
+        </textedit>
+        
+        <textarea name="newpasslabel" from="basetextarea">
+            <area>58,310,300,30</area>
+            <value>New Password:</value>
+        </textarea>
+        
+        <textedit name="newpassword" from="basetextedit">
+            <position>58,340</position>
+        </textedit>
+        
+        <button name="ok" from="basepopupbuttonok">
+            <position>5,705</position>
+            <value>OK</value>
+        </button>
+    </window>
+    
+    <window name="editmetadata">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        <textarea name="label" from="basetextarea">
+            <font>basetitle</font>
+            <area>5,5,590,200</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>Edit Recording Metadata</value>
+        </textarea>
+        
+        <textarea name="titlelabel" from="basetextarea">
+            <area>20,260,550,30</area>
+            <value>Title:</value>
+        </textarea>
+        
+        <textedit name="title" from="basetexteditwide">
+            <position>20,300</position>
+        </textedit>
+        
+        <textarea name="subtitlelabel" from="basetextarea">
+            <area>20,360,550,30</area>
+            <value>Subtitle:</value>
+        </textarea>
+        
+        <textedit name="subtitle" from="basetexteditwide">
+            <position>20,400</position>
+        </textedit>
+        
+        <button name="ok" from="basepopupbuttonok">
+            <position>5,705</position>
+            <value>OK</value>
+        </button>
+    </window>
+    
+    <window name="help_popup">
+        <area>-1,-1,600,800</area>
+        <imagetype name="backimg">
+            <filename>shared/MythPopupBox-background.png</filename>
+        </imagetype>
+        <textarea name="title">
+            <value>Status Icons</value>
+        </textarea>
+        <buttonlist name="list" from="basebuttonlist">
+            
+            <imagetype name="commflagged">
+                <position>20,20</position>
+                <filename>icons/commflagged.png</filename>
+            </imagetype>
+            
+            <textarea name="commflagged_label" from="basetextarea">
+                <area>60,0,200,40</area>
+                <value>Commercials are flagged</value>
+                <multiline>yes</multiline>
+            </textarea>
+            
+            <imagetype name="cutlist">
+                <position>20,20</position>
+                <filename>icons/editcut.png</filename>
+            </imagetype>
+            
+            <textarea name="cutlist_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>An editing cutlist is present</value>
+            </textarea>
+            
+            <imagetype name="autoexpire">
+                <position>20,20</position>
+                <filename>icons/clock.png</filename>
+            </imagetype>
+            
+            <textarea name="autoexpire_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>The program is able to auto-expire</value>
+            </textarea>
+            
+            <imagetype name="processing">
+                <position>20,20</position>
+                <filename>icons/exit.png</filename>
+            </imagetype>
+            
+            <textarea name="processing_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Commercials are being flagged</value>
+            </textarea>
+            
+            <imagetype name="bookmark">
+                <position>20,20</position>
+                <filename>icons/bookmark.png</filename>
+            </imagetype>
+            
+            <textarea name="bookmark_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>A bookmark is set</value>
+            </textarea>
+            
+            <!-- needs to be fixed, we have no icon -->
+            <imagetype name="inuse">
+                <position>20,20</position>
+                <filename>icons/inuse.png</filename>
+            </imagetype>
+            
+            <textarea name="inuse_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in use</value>
+            </textarea>
+            
+            <imagetype name="transcoded">
+                <position>20,20</position>
+                <filename>icons/transcoded.png</filename>
+            </imagetype>
+            
+            <textarea name="transcoded_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording has been transcoded</value>
+            </textarea>
+            
+            <imagetype name="mono">
+                <position>20,20</position>
+                <filename>icons/mono.png</filename>
+            </imagetype>
+            
+            <textarea name="mono_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in Mono</value>
+            </textarea>
+            
+            <imagetype name="stereo">
+                <position>20,20</position>
+                <filename>icons/stereo.png</filename>
+            </imagetype>
+            
+            <textarea name="stereo_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in Stereo</value>
+            </textarea>
+            
+            <imagetype name="surround">
+                <position>20,20</position>
+                <filename>metadata_icons/surround.png</filename>
+            </imagetype>
+            
+            <textarea name="surround_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in Surround Sound</value>
+            </textarea>
+            
+            <imagetype name="dolby">
+                <position>20,20</position>
+                <filename>dd.png</filename>
+            </imagetype>
+            
+            <textarea name="dolby_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in Dolby Surround Sound</value>
+            </textarea>
+            
+            <imagetype name="cc">
+                <position>20,20</position>
+                <filename>icons/closedcaption.png</filename>
+            </imagetype>
+            
+            <textarea name="cc_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is Closed Captioned</value>
+            </textarea>
+            
+            <imagetype name="subtitles">
+                <position>20,20</position>
+                <filename>icons/subtitles.png</filename>
+            </imagetype>
+            
+            <textarea name="subtitles_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording has Subtitles Available</value>
+            </textarea>
+            
+            <imagetype name="onscreensub">
+                <position>20,20</position>
+                <filename>icons/onscreensub.png</filename>
+            </imagetype>
+            
+            <textarea name="onscreensub_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is Subtitled</value>
+            </textarea>
+            
+            <imagetype name="hdtv">
+                <position>20,20</position>
+                <filename>icons/hdrec.png</filename>
+            </imagetype>
+            
+            <textarea name="hdtv_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in High Definition</value>
+            </textarea>
+            
+            <imagetype name="widescreen">
+                <position>20,20</position>
+                <filename>icons/wide.png</filename>
+            </imagetype>
+            
+            <textarea name="widescreen_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in WideScreen</value>
+            </textarea>
+            
+            <imagetype name="watched">
+                <position>20,20</position>
+                <filename>icons/watched.png</filename>
+            </imagetype>
+            
+            <textarea name="watched_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording has been watched</value>
+            </textarea>
+            
+            <imagetype name="preserved">
+                <position>20,20</position>
+                <filename>icons/preserved.png</filename>
+            </imagetype>
+            
+            <textarea name="preserved_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is preserved</value>
+            </textarea>
+            
+            <imagetype name="playlist">
+                <position>20,20</position>
+                <filename>icons/playlist.png</filename>
+            </imagetype>
+            
+            <!-- what is the right label? -->    
+            <textarea name="playlist_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is in a playlist</value>
+            </textarea>
+            
+            <imagetype name="recording">
+                <position>20,20</position>
+                <filename>icons/playlist.png</filename>
+            </imagetype>
+            
+            <!-- what is the right label? -->    
+            <textarea name="recording_label" from="commflagged_label">
+                <position>60,y</position>
+                <value>Recording is currently being recorded</value>
+            </textarea>
+        </buttonlist>
+    </window>
+    
+</mythuitheme>

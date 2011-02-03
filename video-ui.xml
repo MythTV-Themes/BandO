@@ -1,0 +1,1348 @@
+<mythuitheme>
+
+    <!-- Popups -->
+    <window name="moviesel">
+	<area>-1,-1,413,426</area>
+
+	<imagetype name="box">
+	    <filename>mv_results_popup.png</filename>
+	</imagetype>
+
+	<buttonlist name="results" from="basebuttonlist">
+	    <area>20,22,357,378</area>
+	    <showarrow>no</showarrow>
+	</buttonlist>
+    </window>
+
+    <window name="castpopup">
+	<area>-1,-1,413,426</area>
+
+	<imagetype name="box">
+	    <filename>mv_results_popup.png</filename>
+	</imagetype>
+
+	<buttonlist name="cast" from="basebuttonlist">
+	    <area>18,18,360,325</area>
+	    <showarrow>no</showarrow>
+	</buttonlist>
+
+	<button name="ok" from="basebutton">
+	    <position>119,350</position>
+	    <value>OK</value>
+	</button>
+    </window>
+
+    <window name="descriptionpopup">
+	<area>-1,-1,413,426</area>
+
+	<imagetype name="box">
+	    <filename>mv_results_popup.png</filename>
+	</imagetype>
+
+	<textarea name="description" from="basetextarea">
+	    <area>18,18,360,325</area>
+	    <multiline>yes</multiline>
+	</textarea>
+
+	<button name="ok" from="basebutton">
+	    <position>119,350</position>
+	    <value>OK</value>
+	</button>
+    </window>
+
+    <window name="itemdetailpopup">
+	<area>-1,-1,1178,674</area>
+
+	<!--
+	    center 582,330
+
+	    How things are aligned:
+	    19 px from the usable edge
+	    5 px vertical/horizontal spacing between other controls
+	    100 px from center for buttons
+    -->
+	<imagetype name="box">
+	    <!-- border (t, l, b, r) : (6, 6, 20, 20) -->
+	    <filename>mv_itemdetail_popup.png</filename>
+	</imagetype>
+
+	<imagetype name="coverart">
+	    <area>25,100,312,465</area>
+	    <filename>mv_browse_nocover_large.png</filename>
+	    <preserveaspect>true</preserveaspect>
+	</imagetype>
+
+	<textarea name="title" from="basetextarea">
+	    <area>25,25,1114,70</area>
+	    <multiline>yes</multiline>
+	    <font>basetitle</font>
+	    <align>center</align>
+	</textarea>
+
+	<textarea name="description" from="basetextarea">
+	    <area>369,100,770,290</area>
+	    <multiline>yes</multiline>
+	</textarea>
+
+	<textarea name="rating" from="basetextarea">
+	    <area>369,395,770,90</area>
+	    <multiline>yes</multiline>
+	</textarea>
+
+	<textarea name="dirlbl" from="basetextarea">
+	    <area>369,490,165,35</area>
+	    <value>Directed by</value>
+	</textarea>
+
+	<textarea name="director" from="basetextarea">
+	    <area>539,490,600,35</area>
+	    <font>basemedium</font>
+	</textarea>
+
+	<textarea name="lenlbl" from="basetextarea">
+	    <area>369,530,120,35</area>
+	    <value>Runtime:</value>
+	    <align>right</align>
+	</textarea>
+
+	<textarea name="length" from="basetextarea">
+	    <area>494,530,177,35</area>
+	</textarea>
+
+	<textarea name="yrlbl" from="basetextarea">
+	    <area>676,530,80,35</area>
+	    <value>Year:</value>
+	    <align>right</align>
+	</textarea>
+
+	<textarea name="year" from="basetextarea">
+	    <area>761,530,80,35</area>
+	</textarea>
+
+	<textarea name="userratinglbl" from="basetextarea">
+	    <area>846,530,218,35</area>
+	    <align>right,top</align>
+	    <value>User Rating:</value>
+	</textarea>
+
+	<textarea name="userrating" from="basetextarea">
+	    <area>1069,530,70,35</area>
+	    <align>left,top</align>
+	</textarea>
+
+	<!-- assumes buttons are 153x43 -->
+	<button name="done_button" from="basebutton">
+	    <value>Done</value>
+	    <position>329,592</position>
+	</button>
+
+	<button name="play_button" from="basebutton">
+	    <value>Play</value>
+	    <position>682,592</position>
+	</button>
+    </window>
+
+    <!-- Main Windows -->
+    <window name="manager">
+
+	<statetype name="parentallevel">
+	    <position>740,10</position>
+	    <state name="None">
+		<imagetype name="icon">
+		    <filename>mv_level_none.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Lowest">
+		<imagetype name="icon">
+		    <filename>mv_level_lowest.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Low">
+		<imagetype name="icon">
+		    <filename>mv_level_low.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Medium">
+		<imagetype name="icon">
+		    <filename>mv_level_medium.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="High">
+		<imagetype name="icon">
+		    <filename>mv_level_high.png</filename>
+		</imagetype>
+	    </state>
+	</statetype>
+
+	<textarea name="novideos" from="basetextarea">
+	    <area>0,110,800,70</area>
+	    <multiline>yes</multiline>
+	    <align>hcenter,vcenter</align>
+	</textarea>
+
+	<textarea name="title" from="basetextarea">
+	    <area>20,10,710,80</area>
+	    <font>basetitle</font>
+	</textarea>
+
+	<textarea name="dirlbl" from="basetextarea">
+	    <area>20,65,130,35</area>
+	    <font>basesmall</font>
+	    <align>right,top</align>
+	    <value>Director:</value>
+	</textarea>
+
+	<textarea name="director" from="basetextarea">
+	    <area>160,65,350,35</area>
+	    <font>basesmallyellow</font>
+	</textarea>
+
+	<textarea name="yrlbl" from="dirlbl">
+	    <position>500,65</position>
+	    <value>Year:</value>
+	</textarea>
+
+	<textarea name="year" from="director">
+	    <area>650,65,100,35</area>
+	</textarea>
+
+	<textarea name="ratlbl" from="dirlbl">
+	    <position>20,95</position>
+	    <value>Rated:</value>
+	</textarea>
+
+	<textarea name="rating" from="director">
+	    <area>160,95,350,35</area>
+	</textarea>
+
+	<textarea name="lvllbl" from="dirlbl">
+	    <position>500,95</position>
+	    <value>Parental Level:</value>
+	</textarea>
+
+	<statetype name="videolevel">
+	    <position>645,90</position>
+	    <state name="Lowest">
+		<imagetype name="icon">
+		    <area>0,2,30,30</area>
+		    <filename>mv_level_lowest.png</filename>
+		</imagetype>
+		<textarea name="label">
+		    <area>35,6,100,35</area>
+		    <value>Lowest</value>
+		    <font>basesmallyellow</font>
+		</textarea>
+	    </state>
+	    <state name="Low" from="Lowest">
+		<imagetype name="icon">
+		    <filename>mv_level_low.png</filename>
+		</imagetype>
+		<textarea name="label">
+		    <value>Low</value>
+		</textarea>
+	    </state>
+	    <state name="Medium" from="Lowest">
+		<imagetype name="icon">
+		    <filename>mv_level_medium.png</filename>
+		</imagetype>
+		<textarea name="label">
+		    <value>Medium</value>
+		</textarea>
+	    </state>
+	    <state name="High" from="Lowest">
+		<imagetype name="icon">
+		    <filename>mv_level_high.png</filename>
+		</imagetype>
+		<textarea name="label">
+		    <value>High</value>
+		</textarea>
+	    </state>
+	</statetype>
+
+	<textarea name="browselbl" from="dirlbl">
+	    <position>500,125</position>
+	    <value>Browsable:</value>
+	    <align>right,top</align>
+	</textarea>
+
+	<textarea name="browseable" from="director">
+	    <area>650,125,100,35</area>
+	</textarea>
+
+	<textarea name="lenlbl" from="dirlbl">
+	    <position>20,125</position>
+	    <value>Runtime:</value>
+	</textarea>
+
+	<textarea name="length" from="director">
+	    <area>160,125,350,35</area>
+	</textarea>
+
+	<textarea name="desclbl" from="dirlbl">
+	    <position>20,155</position>
+	    <value>Plot:</value>
+	</textarea>
+
+	<textarea name="description" from="director">
+	    <area>160,155,600,35</area>
+	</textarea>
+
+	<textarea name="fillbl" from="dirlbl">
+	    <position>20,185</position>
+	    <value>Filename:</value>
+	</textarea>
+
+	<textarea name="filename" from="director">
+	    <area>160,185,600,35</area>
+	</textarea>
+
+	<textarea name="cvflbl" from="dirlbl">
+	    <position>20,215</position>
+	    <value>Cover File:</value>
+	</textarea>
+
+	<textarea name="coverfile" from="director">
+	    <area>160,215,600,35</area>
+	</textarea>
+
+	<textarea name="imdblbl" from="dirlbl">
+	    <position>20,245</position>
+	    <value>Video Num.:</value>
+	</textarea>
+
+	<textarea name="inetref" from="director">
+	    <area>160,245,100,35</area>
+	</textarea>
+
+	<imagetype name="menu_background">
+	    <position>0,270</position>
+	    <filename>cr-background.png</filename>
+	</imagetype>
+
+	<buttonlist name="videos">
+	    <area>20,282,760,242</area>
+	    <layout>vertical</layout>
+	    <spacing>5</spacing>
+	    <buttonarea>0,0,760,250</buttonarea>
+	    <statetype name="buttonitem">
+		<area>0,0,760,25</area>
+		<state name="active">
+		    <imagetype name="buttonimage">
+			<area>0,2,25,25</area>
+			<preserveaspect>yes</preserveaspect>
+			<filename>shared/grid_noimage.png</filename>
+		    </imagetype>
+		    <statetype name="nodetype">
+			<position>0,9</position>
+			<state name="subfolder">
+			    <imagetype name="icon">
+				<area>0,0,25,25</area>
+				<filename>shared/directory.png</filename>
+				<preserveaspect>yes</preserveaspect>
+			    </imagetype>
+			</state>
+			<state name="upfolder">
+			    <imagetype name="icon">
+				<area>0,0,25,25</area>
+				<filename>shared/updirectory.png</filename>
+				<preserveaspect>yes</preserveaspect>
+			    </imagetype>
+			</state>
+		    </statetype>
+		    <textarea name="buttontext" from="basetextarea">
+			<area>30,4,250,30</area>
+			<font>basesmallgrey</font>
+		    </textarea>
+		    <textarea name="director" from="buttontext">
+			<area>380,4,150,25</area>
+		    </textarea>
+		    <textarea name="year" from="buttontext">
+			<area>670,4,50,25</area>
+		    </textarea>
+		</state>
+		<state name="selectedactive" from="active">
+		    <textarea name="buttontext">
+			<font>basesmall</font>
+		    </textarea>
+		    <textarea name="director">
+			<font>basesmall</font>
+		    </textarea>
+		    <textarea name="year">
+			<font>basesmall</font>
+		    </textarea>
+		</state>
+	    </statetype>
+	    <statetype name="upscrollarrow">
+		<position>240,270</position>
+		<showempty>yes</showempty>
+		<state type="full">
+		    <imagetype name="upon">
+			<filename>up_arrow.png</filename>
+		    </imagetype>
+		</state>
+	    </statetype>
+	    <statetype name="downscrollarrow">
+		<position>456,270</position>
+		<showempty>yes</showempty>
+		<state type="full">
+		    <imagetype name="dnon">
+			<filename>down_arrow.png</filename>
+		    </imagetype>
+		</state>
+	    </statetype>
+	</buttonlist>
+
+    </window>
+
+    <window name="browser">
+
+    <imagetype name="backgroundlogo">
+	<area>0,0,1680,1050</area>
+	<filename>video/background-main-logo.png</filename>
+    </imagetype>
+    
+    <!--  background of the banner	  -->
+    
+
+    
+    <!-- Fanart      
+    <imagetype name="fanart">
+	<area>46,50,1347,760</area>
+	<filename />
+	<mask>playback/fanart-mask.png</mask>
+    </imagetype>	
+    <imagetype name="bannerbackground">
+    <area>0,0,768,150</area>
+    <filename>playback/bannerbackground.png</filename>
+    </imagetype>    -->
+	<!-- The banner of the current show 
+    <imagetype name="banner">
+    <area>5,5,758,140</area>
+    <filename />
+    <mask>playback/bannermask.png</mask>
+    </imagetype>-->
+    
+    <!--  background for the cover previews  -->
+    
+    <imagetype name="coverartbackground">
+	<area>10,740,1480,250</area>
+	<filename>video/coverartbackground.png</filename>
+    </imagetype>
+    
+	<buttonlist name="videos">
+	    <area>15,740,1470,240</area>
+	    <layout>horizontal</layout>
+	    <scrollstyle>free</scrollstyle>
+	    <arrange>stack</arrange>
+	    <spacing>10</spacing>
+	    <buttonarea>0,0,100%,100%</buttonarea>
+	    <statetype name="buttonitem">
+		<state name="active">
+		<area>0,0,159,240</area>
+		
+		    <!-- the actual cover -->
+		    <imagetype name="buttonimage">
+			<area>0,0,159,240</area>
+			<preserveaspect>true</preserveaspect>
+			<filename>shared/grid_noimage.png</filename>
+		    </imagetype>
+		    <statetype name="nodetype">
+			<position>60,140</position>
+			<state name="subfolder">
+			    <imagetype name="icon">
+				<area>0,0,70,70</area>
+				<filename>shared/directory.png</filename>
+				<preserveaspect>yes</preserveaspect>
+			    </imagetype>
+			</state>
+			<state name="upfolder">
+			    <imagetype name="icon">
+				<area>0,0,70,70</area>
+				<filename>shared/updirectory.png</filename>
+				<preserveaspect>yes</preserveaspect>
+			    </imagetype>
+			</state>
+		    </statetype>
+		</state>
+		<state name="selectedactive" from="active">
+		    <imagetype name="buttonimage">
+			<area>0,0,159,240</area>
+			<preserveaspect>true</preserveaspect>
+			<filename>shared/grid_noimage.png</filename>
+		    </imagetype>
+		</state>
+	    </statetype>
+	    <!-- arrows in the middle -->
+    <statetype name="upscrollarrow">
+    <position>500,-360</position>
+    <state type="off">
+	<imagetype name="upoff">
+	<filename>icons/draw-triangle1.png</filename>
+	<alpha>30</alpha>
+	</imagetype>
+    </state>
+    <state type="full">
+	<imagetype name="upon">
+	<filename>icons/draw-triangle1.png</filename>
+	</imagetype>
+    </state>
+    </statetype>
+    <statetype name="downscrollarrow">
+    <position>940,-360</position>
+    <state type="off">
+	<imagetype name="dnoff">
+	<filename>icons/draw-triangle2.png</filename>
+	<alpha>30</alpha>
+	</imagetype>
+    </state>
+    <state type="full">
+	<imagetype name="dnon">
+	<filename>icons/draw-triangle2.png</filename>
+	</imagetype>
+    </state>
+    </statetype>
+	</buttonlist>
+
+    <imagetype name="coverart">
+	<area>1400,50,280,400</area>
+	<preserveaspect>yes</preserveaspect>
+    </imagetype>
+
+
+    <!--    The title of a show	  -->
+    <textarea name="title" from="basetextarea">
+	<area>50,380,620,42</area>
+	<font>basetitle</font>
+	<cutdown>yes</cutdown>
+    </textarea>
+    
+    <!--  The subtitle of a show  -->
+    <textarea name="subtitle" from="basetextarea">
+	<area>50,412,620,30</area>
+	<cutdown>yes</cutdown>
+    </textarea>
+	<textarea name="currentvideo" from="basetextarea">
+	    <area>150,486,500,35</area>
+	    <align>top,vcenter</align>
+	</textarea>
+
+	<textarea name="dirlbl" from="basetextarea">
+	    <area>380,50,165,35</area>
+	    <value>Directed by</value>
+	</textarea>
+
+	<textarea name="director" from="basetextarea">
+	    <area>540,63,450,35</area>
+	    <font>basemedium</font>
+	</textarea>
+
+	<textarea name="s##e##" from="basetextarea">
+	    <area>1010,63,150,35</area>
+	    <font>basemedium</font>
+	</textarea>
+
+	<textarea name="description" from="basetextarea">
+	    <area>380,97,840,145</area>
+	    <multiline>yes</multiline>
+	</textarea>
+
+	<textarea name="rating" from="basetextarea">
+	    <area>385,270,533,90</area>
+	    <multiline>yes</multiline>
+	</textarea>
+
+	<textarea name="lenlbl" from="basetextarea">
+	    <area>380,420,120,35</area>
+	    <value>Runtime:</value>
+	    <align>right</align>
+	</textarea>
+
+	<textarea name="length" from="basetextarea">
+	    <area>510,420,250,35</area>
+	</textarea>
+
+	<textarea name="yrlbl" from="basetextarea">
+	    <area>720,420,90,35</area>
+	    <value>Year:</value>
+	    <align>right</align>
+	</textarea>
+
+	<textarea name="year" from="basetextarea">
+	    <area>820,420,100,35</area>
+	</textarea>
+
+	<textarea name="userratinglbl" from="basetextarea">
+	    <area>1000,420,160,35</area>
+	    <align>right,top</align>
+	    <value>User Rating:</value>
+	</textarea>
+
+	<textarea name="userrating" from="basetextarea">
+	    <area>1170,420,50,35</area>
+	    <align>hcenter,top</align>
+	</textarea>
+
+	<textarea name="position" from="basetextarea">
+	    <area>560,455,160,38</area>
+	    <align>hcenter,vcenter</align>
+	    <font>basemedium</font>
+	</textarea>
+
+	<textarea name="novideos" from="basetextarea">
+	    <area>250,130,540,70</area>
+	    <multiline>yes</multiline>
+	    <align>hcenter,vcenter</align>
+	</textarea>
+
+	<statetype name="parentallevel">
+	    <position>1210,12</position>
+	    <state name="None">
+		<imagetype name="icon">
+		    <filename>mv_level_none.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Lowest">
+		<imagetype name="icon">
+		    <filename>mv_level_lowest.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Low">
+		<imagetype name="icon">
+		    <filename>mv_level_low.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Medium">
+		<imagetype name="icon">
+		    <filename>mv_level_medium.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="High">
+		<imagetype name="icon">
+		    <filename>mv_level_high.png</filename>
+		</imagetype>
+	    </state>
+	</statetype>
+    </window>
+
+    <window name="gallery">
+    
+      <imagetype name="backgroundlogo">
+        <area>0,0,1680,1050</area>
+        <filename>shared/background-main-logo.png</filename>
+      </imagetype>
+        <!--  Clock and Date on the right	  -->
+    
+    <clock name="clock" from="baseclock" />
+    <clock name="date" from="basedate" />
+   
+      <!-- Fanart      -->
+      <imagetype name="fanart">
+        <area>46,50,1347,760</area>
+        <filename />
+
+        <mask>playback/fanart-mask.png</mask>
+      </imagetype>	
+    <!--  background of the banner	  -->
+<imagetype name="bannerbackground">
+      <area>0,0,768,150</area>
+      <filename>playback/bannerbackground.png</filename>
+    </imagetype>    
+        <!-- The banner of the current show -->
+    <imagetype name="banner">
+      <area>5,5,758,140</area>
+      <filename />
+      <mask>playback/bannermask.png</mask>
+    </imagetype>
+
+	<buttonlist name="videos">
+	    <area>66,120,1360,860</area>
+	    <layout>grid</layout>
+	    <spacing>15</spacing>
+	    <buttonarea>0,0,1360,860</buttonarea>
+	    <statetype name="buttonitem">
+		<state name="active">
+		    <area>0,0,175,160</area>
+		    <imagetype name="buttonbackground">
+                        <filename>gallery/grid_back_reg.png</filename>
+		    </imagetype>
+                    <imagetype name="buttonimage">
+                        <area>10,8,155,125</area>
+                        <filename>gallery/unknown.png</filename>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <statetype name="nodetype">
+                        <position>90,70</position>
+                        <state name="subfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>gallery/folder.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder">
+                            <imagetype name="icon">
+                                <area>0,0,70,70</area>
+                                <filename>gallery/folder-back.png</filename>
+                                <preserveaspect>yes</preserveaspect>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext">
+                        <area>5,133,165,25</area>
+                        <font>basesmall</font>
+                        <align>hcenter,bottom</align>
+                    </textarea>
+                    <textarea name="childcount" from="basetextarea">
+                        <area>85,100,80,25</area>
+                        <font>basesmallblack</font>
+                        <align>center</align>
+                    </textarea>
+		</state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground">
+                        <filename>gallery/grid_back_sel.png</filename>
+                    </imagetype>
+                </state>
+	    </statetype>
+            <statetype name="upscrollarrow">
+                <position>-24,0</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>icons/1uparrow.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>1308,0</position>
+                <showempty>yes</showempty>
+                <state type="full">
+                    <imagetype name="dnon">
+                        <filename>icons/1downarrow.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+	</buttonlist>
+    
+    <!--    The title of a show	  -->
+    <textarea name="title" from="basetextarea">
+      <area>775,46,700,30</area>
+      <font>basetitle</font>
+      <cutdown>yes</cutdown>
+    </textarea>
+    
+    <!--  The subtitle of a show  -->
+    <textarea name="subtitle" from="basetextarea">
+      <area>775,78,620,60</area>
+      <cutdown>yes</cutdown>
+	    <multiline>yes</multiline>
+</textarea>
+
+	<textarea name="s##e##" from="basetextarea">
+	    <area>870,15,100,40</area>
+	    <align>hcenter,vcenter</align>
+	    <font>basemedium</font>
+	</textarea>        
+
+         <!-- optional - shows current position in grid eg '1 of 123' -->
+        <textarea name="position" from="basetextarea">
+            <area>1146,50,200,40</area>
+            <align>hcenter,vcenter</align>
+            <font>basemedium</font>
+        </textarea>
+
+	<textarea name="novideos" from="basetextarea">
+            <area>50,50,1360,780</area>
+            <font>basemedium</font>
+            <align>allcenter</align>
+	</textarea>
+
+	<textarea name="breadcrumbs" from="basetextarea">
+	    <area>46,1010,1300,30</area>
+	    <font>basemedium</font>
+	    <align>right,vcenter</align>
+	</textarea>
+
+	<statetype name="parentallevel">
+	    <position>20,10</position>
+	    <state name="None">
+		<imagetype name="icon">
+		    <filename>mv_level_none.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Lowest">
+		<imagetype name="icon">
+		    <filename>mv_level_lowest.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Low">
+		<imagetype name="icon">
+		    <filename>mv_level_low.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="Medium">
+		<imagetype name="icon">
+		    <filename>mv_level_medium.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="High">
+		<imagetype name="icon">
+		    <filename>mv_level_high.png</filename>
+		</imagetype>
+	    </state>
+	</statetype>
+    </window>
+
+    <window name="tree">
+    
+<!--  we use one large background image to draw all widgets on top	  -->
+    <imagetype name="backgroundlogo" from="basebackgroundlogo" />
+    <!--  Clock and Date on the right	  -->
+    <clock name="clock" from="baseclock" />
+    <clock name="date" from="basedate" />
+
+    
+    <!-- Fanart      -->
+    <imagetype name="fanart">
+	<area>46,50,1347,760</area>
+	<filename />
+	<grayscale>true</grayscale>
+	<mask>playback/fanart-mask.png</mask>
+    </imagetype>	
+
+    <!--  background of the banner	  -->
+    
+    <imagetype name="bannerbackground">
+    <area>0,0,768,150</area>
+    <filename>playback/bannerbackground.png</filename>
+    </imagetype>    
+	<!-- The banner of the current show -->
+    <imagetype name="banner">
+    <area>5,5,758,140</area>
+    <filename />
+    <mask>playback/bannermask.png</mask>
+    </imagetype>
+
+    <textarea name="breadcrumbs" from="basetextarea">
+	<area>46,1010,1180,40</area>
+	<font>basemedium</font>
+    </textarea>
+    <textarea name="position" from="basetextarea">
+	<area>1100,50,200,40</area>
+	<font>basemedium</font>
+	<align>right</align>          
+    </textarea>
+    
+    <imagetype name="divider">
+	<area>490,136,3,580</area>
+	<filename>playback/divider.png</filename>
+    </imagetype>
+    <imagetype name="divider2">
+	<area>940,136,3,580</area>
+	<filename>playback/divider.png</filename>
+    </imagetype>        
+    
+    
+    <buttontree name="videos">
+	<area>52,136,1347,500</area>
+	<numlists>3</numlists>
+	<buttonlist name="listtemplate" from="basebuttonlist" />
+    </buttontree>
+    
+    <textarea name="title" from="basetextarea">
+	<area>46,780,450,40</area>
+	<font>basetitle</font>
+	<cutdown>yes</cutdown>
+    </textarea>
+    <textarea name="subtitle" from="basetextarea">
+	<area>46,825,450,40</area>
+	<font>basemedium</font>
+	<cutdown>yes</cutdown>
+    </textarea>
+	
+    <textarea name="description" from="basetextarea">
+	<area>550,780,800,130</area>
+	<align>left,top</align>
+	<multiline>yes</multiline>
+	<cutdown>yes</cutdown>
+    </textarea>
+    
+    <textarea name="s##e##" from="basetextarea">
+	<area>46,860,400,30</area>
+	<font>basemedium</font>
+    </textarea>
+
+    <textarea name="director" from="basetextarea">
+	<area>46,895,400,40</area>
+    </textarea>
+    
+    <textarea name="year" from="basetextarea">
+	<area>46,935,80,40</area>
+    </textarea>
+
+    <textarea name="cast" from="basetextarea">
+	<area>550,915,800,60</area>
+	<align>left,top</align>
+	<multiline>yes</multiline>
+	<cutdown>yes</cutdown>
+    </textarea>
+
+    <imagetype name="coverart" from="basecoverart" />
+    
+    <statetype name="parentallevel">
+	<position>1350,50</position>
+	<state name="None">
+	<imagetype name="icon">
+	    <filename>mv_level_none.png</filename>
+	</imagetype>
+	</state>
+	<state name="Lowest">
+	<imagetype name="icon">
+	    <filename>mv_level_lowest.png</filename>
+	</imagetype>
+	</state>
+	<state name="Low">
+	<imagetype name="icon">
+	    <filename>mv_level_low.png</filename>
+	</imagetype>
+	</state>
+	<state name="Medium">
+	<imagetype name="icon">
+	    <filename>mv_level_medium.png</filename>
+	</imagetype>
+	</state>
+	<state name="High">
+	<imagetype name="icon">
+	    <filename>mv_level_high.png</filename>
+	</imagetype>
+	</state>
+    </statetype>
+    </window>
+
+    <window name="file_associations">
+	<textarea name="title" from="basetextarea">
+	    <area>10,10,1260,50</area>
+	    <value>MythVideo File Associations</value>
+	    <font>basetitle</font>
+	    <align>hcenter,vcenter</align>
+	</textarea>
+
+	<textarea name="extension_text" from="basetextarea">
+	    <area>340,200,200,40</area>
+	    <value>Extension:</value>
+	    <align>right,vcenter</align>
+	</textarea>
+
+	<textarea name="command_text" from="extension_text">
+	    <position>340,260</position>
+	    <value>Command:</value>
+	</textarea>
+
+	<textarea name="default_text" from="extension_text">
+	    <position>340,320</position>
+	    <value>Use default player:</value>
+	</textarea>
+
+	<textarea name="ignore_text" from="extension_text">
+	    <position>340,380</position>
+	    <value>Ignore:</value>
+	</textarea>
+
+	<buttonlist name="extension_select" from="baseselector">
+	    <position>550,200</position>
+	</buttonlist>
+
+	<textedit name="command" from="basetextedit">
+	    <position>550,255</position>
+	</textedit>
+
+	<checkbox name="default_check" from="basecheckbox">
+	    <position>550,322</position>
+	</checkbox>
+
+	<checkbox name="ignore_check" from="basecheckbox">
+	    <position>550,382</position>
+	</checkbox>
+
+	<button name="done_button" from="basebutton">
+	    <position>850,600</position>
+	</button>
+
+	<button name="new_button" from="basebutton">
+	    <position>680,600</position>
+	</button>
+
+	<button name="delete_button" from="basebutton">
+	    <position>300,600</position>
+	</button>
+    </window>
+
+    <window name="edit_metadata">
+
+<!--  we use one large background image to draw all widgets on top	  -->
+    <imagetype name="backgroundlogo" from="basebackgroundlogo" />
+    <!--  Clock and Date on the right	  -->
+    <clock name="clock" from="baseclock" />
+    <clock name="date" from="basedate" />
+    
+    <!-- Fanart      -->
+    <imagetype name="fanart">
+	<area>46,50,1347,760</area>
+	<filename />
+	<grayscale>true</grayscale>
+	<mask>playback/fanart-mask.png</mask>
+    </imagetype>	
+
+    <imagetype name="coverart" from="basecoverart" />
+
+	<textarea name="title" from="basetextarea">
+	    <area>50,10,760,50</area>
+	    <value>Edit Video Information</value>
+	    <font>basetitle</font>
+	</textarea>
+
+<!-- change title and subtitle -->
+	<textarea name="title_text" from="basetextarea">
+	    <area>50,100,400,40</area>
+	    <value>Title:</value>
+	    <align>right</align>
+	</textarea>
+
+	<textedit name="title_edit" from="basetextedit">
+	    <position>500,100</position>
+	</textedit>
+
+	<textarea name="subtitle_text" from="title_text">
+	    <position>50,150</position>
+	    <value>Subtitle:</value>
+	</textarea>
+
+	<textedit name="subtitle_edit" from="basetextedit">
+	    <position>500,150</position>
+	</textedit>
+
+<!-- Season and Episode -->
+	<textarea name="season_text" from="title_text">
+	    <position>50,200</position>
+	    <value>Season:</value>
+	</textarea>
+
+	<spinbox name="season" from="basespinbox">
+	    <position>500,200</position>
+	</spinbox>
+
+	<textarea name="episode_text" from="title_text">
+	    <position>50,250</position>
+	    <value>Episode:</value>
+	</textarea>
+	
+	<spinbox name="episode" from="basespinbox">
+	    <position>500,250</position>
+	</spinbox>
+
+<!-- Parental Control -->
+	<textarea name="level_text" from="title_text">
+	    <position>50,300</position>
+	    <value>Parental Control:</value>
+	</textarea>
+
+	<spinbox name="level_select" from="basespinbox">
+	    <position>500,300</position>
+	</spinbox>
+
+<!-- category -->
+	<textarea name="category_text" from="title_text">
+	    <position>50,350</position>
+	    <value>Category:</value>
+	</textarea>
+
+	<spinbox name="category_select" from="basespinbox">
+	    <position>500,350</position>
+	</spinbox>
+
+<!-- what will follow? -->
+	<textarea name="child_text" from="title_text">
+	    <position>50,400</position>
+	    <value>File to Always Play Next:</value>
+	</textarea>
+	
+	<spinbox name="child_select" from="basespinbox">
+	    <position>500,400</position>
+	</spinbox>
+
+<!-- you want it to appear while browsing? -->
+	<textarea name="browse_text" from="title_text">
+	    <position>50,450</position>
+	    <value>Include while Browsing:</value>
+	</textarea>
+
+	<checkbox name="browse_check" from="basecheckbox">
+	    <position>500,450</position>
+	</checkbox>
+
+<!-- Watched? -->
+	<textarea name="watched_text" from="title_text">
+	    <position>50,500</position>
+	    <value>Item has been watched:</value>
+	</textarea>
+
+	<checkbox name="watched_check" from="basecheckbox">
+	    <position>500,500</position>
+	</checkbox>
+
+<!-- coverart selector -->
+	<textarea name="coverart_text_label" from="title_text">
+	    <position>50,550</position>
+	    <value>Cover Art:</value>
+	</textarea>
+
+	<button name="coverart_button" from="basebuttonnolabel">
+	    <position>500,550</position>
+	</button>
+
+	<textarea name="coverart_text" from="basetextarea">
+	    <area>540,550,1000,40</area>
+	    <value>/path/to/the/thing.jpg</value>
+	</textarea>
+
+<!-- screenshot selector -->
+	<textarea name="screenshot_text_label" from="title_text">
+	    <position>50,600</position>
+	    <value>Screenshot:</value>
+	</textarea>
+
+	<button name="screenshot_button" from="basebuttonnolabel">
+	    <position>500,600</position>
+	</button>
+
+	<textarea name="screenshot_text" from="basetextarea">
+	    <area>540,600,250,40</area>
+	    <value>/path/to/the/thing.jpg</value>
+	</textarea>
+
+<!-- banner selector -->
+	<textarea name="banner_text_label" from="title_text">
+	    <position>50,650</position>
+	    <value>Banner:</value>
+	</textarea>
+
+	<button name="banner_button" from="basebuttonnolabel">
+	    <position>500,650</position>
+	</button>
+
+	<textarea name="banner_text" from="basetextarea">
+	    <area>540,650,1000,40</area>
+	    <value>/path/to/the/thing.jpg</value>
+	</textarea>
+
+<!-- fan art chooser -->
+	<textarea name="fanart_text_label" from="title_text">
+	    <position>50,700</position>
+	    <value>Fanart:</value>
+	</textarea>
+
+	<button name="fanart_button" from="basebuttonnolabel">
+	    <position>500,700</position>
+	</button>
+
+	<textarea name="fanart_text" from="basetextarea">
+	    <area>540,700,1000,40</area>
+	    <value>/path/to/the/thing.jpg</value>
+	</textarea>
+
+<!--trailer_button -->
+	<textarea name="trailer_text_label" from="title_text">
+	    <position>50,750</position>
+	    <value>Trailer:</value>
+	</textarea>
+	
+	<button name="trailer_button" from="basebuttonnolabel">
+	    <position>500,750</position>
+	</button>
+
+	<textarea name="trailer_text" from="basetextarea">
+	    <area>540,750,1000,40</area>
+	    <value>/path/to/the/thing.jpg</value>
+	</textarea>
+
+<!-- what player to use -->
+	<textarea name="player_text" from="title_text">
+	    <position>50,800</position>
+	    <value>Unique Player Command:</value>
+	</textarea>
+	
+	<textedit name="player_edit" from="basetextedit">
+	    <position>500,800</position>
+	</textedit>
+
+	<button name="done_button" from="basepopupbuttonok">
+	    <position>795,930</position>
+	    <value>Done</value>
+	</button>
+
+    </window>
+
+    <!-- TODO - Incomplete, replace with a global file selection dialog in
+	mythdialogbox.cpp and base.xml -->
+    <window name="file_chooser">
+
+	<imagetype name="file_browser_background">
+	    <filename>mv_filerequest.png</filename>
+	</imagetype>
+
+	<imagetype name="image_box">
+	    <area>19,20,143,209</area>
+	</imagetype>
+
+    </window>
+
+    <window name="filter">
+
+	<textarea name="title" from="basetextarea">
+	    <area>20,50,760,40</area>
+	    <value>Filters video list</value>
+	    <align>hcenter,vcenter</align>
+	    <font>basetitle</font>
+	</textarea>
+
+	<!-- Labels -->
+	<textarea name="textfilter_text">
+	    <area>10,127,250,30</area>
+	    <value>Text Filter:</value>
+	    <font>basemedium</font>
+	    <align>right</align>
+	</textarea>
+
+	<textarea name="category_text" from="basetextarea">
+	    <area>10,191,140,34</area>
+	    <value>Category :</value>
+	    <align>right,top</align>
+	</textarea>
+
+	<textarea name="genre_text" from="category_text">
+	    <position>10,225</position>
+	    <value>Genre :</value>
+	</textarea>
+
+	<textarea name="country_text" from="category_text">
+	    <position>10,279</position>
+	    <value>Country :</value>
+	</textarea>
+
+	<textarea name="cast_text" from="category_text">
+	    <position>10,323</position>
+	    <value>Actor/Actress :</value>
+	</textarea>
+
+	<textarea name="year_text" from="category_text">
+	    <position>10,367</position>
+	    <value>Year :</value>
+	</textarea>
+
+	<textarea name="runtime_text" from="category_text">
+	    <position>10,411</position>
+	    <value>Runtime :</value>
+	</textarea>
+
+	<textarea name="userrating_text" from="category_text">
+	    <position>400,191</position>
+	    <value>User Rating :</value>
+	</textarea>
+
+	<textarea name="browse_text" from="category_text">
+	    <position>400,235</position>
+	    <value>Browse :</value>
+	</textarea>
+
+	<textarea name="inetref_text" from="category_text">
+	    <position>400,279</position>
+	    <value>InetRef :</value>
+	</textarea>
+
+	<textarea name="coverfile_text" from="category_text">
+	    <position>400,323</position>
+	    <value>Cover File :</value>
+	</textarea>
+
+	<textarea name="orderby_text" from="category_text">
+	    <position>400,367</position>
+	    <value>Sort by :</value>
+	</textarea>
+
+	<textarea name="watched_text" from="category_text">
+	    <position>400,411</position>
+	    <value>Watched :</value>
+	</textarea>
+
+	<!-- Widgets -->
+	<textedit name="textfilter_input" from="basetextedit">
+	    <position>300,118</position>
+	</textedit>
+
+	<buttonlist name="category_select" from="baseselector">
+	    <position>160,184</position>
+	</buttonlist>
+
+	<buttonlist name="genre_select" from="baseselector">
+	    <position>160,228</position>
+	</buttonlist>
+
+	<buttonlist name="country_select" from="baseselector">
+	    <position>160,272</position>
+	</buttonlist>
+
+	<buttonlist name="cast_select" from="baseselector">
+	    <position>160,316</position>
+	</buttonlist>
+
+	<buttonlist name="year_select" from="baseselector">
+	    <position>160,360</position>
+	</buttonlist>
+
+	<buttonlist name="runtime_select" from="baseselector">
+	    <position>160,404</position>
+	</buttonlist>
+
+	<buttonlist name="userrating_select" from="baseselector">
+	    <position>550,184</position>
+	</buttonlist>
+
+	<buttonlist name="browse_select" from="baseselector">
+	    <position>550,228</position>
+	</buttonlist>
+
+	<buttonlist name="inetref_select" from="baseselector">
+	    <position>550,272</position>
+	</buttonlist>
+
+	<buttonlist name="coverfile_select" from="baseselector">
+	    <position>550,316</position>
+	</buttonlist>
+
+	<buttonlist name="orderby_select" from="baseselector">
+	    <position>550,360</position>
+	</buttonlist>
+
+	<buttonlist name="watched_select" from="baseselector">
+	    <position>550,404</position>
+	</buttonlist>
+
+	<textarea name="numvideos_text" from="basetextarea">
+	    <area>20,490,760,30</area>
+	    <value>Result</value>
+	    <align>allcenter</align>
+	</textarea>
+
+	<button name="done_button" from="basebutton">
+	    <position>400,545</position>
+	    <value>Done</value>
+	</button>
+
+	<button name="save_button" from="basebutton">
+	    <position>200,545</position>
+	    <value>Save as default</value>
+	</button>
+
+    </window>
+</mythuitheme>
+
