@@ -1,5 +1,5 @@
 <themeinfo>
-    <name>bando</name>
+    <name>BandO</name>
     <aspect>16:10</aspect>
     <author>
 	<name>Elkin Fricke</name>
@@ -9,6 +9,7 @@
     <!-- The Theme Types (Required) -->
     <types>
 	<!-- Type. Legal Values are one or more of: UI, OSD and Menu -->
+	<type>OSD</type>
 	<type>UI</type>
     </types>
     
